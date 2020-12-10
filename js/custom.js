@@ -1621,7 +1621,7 @@
         //img: //app.vidPath + '/img/login/' + 'background-01.jpg',
         hours_link: {
             'type': 'gcal',
-            'url': 'https://content.googleapis.com/calendar/v3/calendars/westernsem.edu_747qjgic8daafbdlec3cl0m11s@group.calendar.google.com/events?maxResults=15&orderBy=startTime&showDeleted=false&singleEvents=true&timeMin=' + new Date().toISOString() + '&minAccessRole=reader&key=AIzaSyA6c5P5E3wKYSvsqZxW9Y19RAw7u-AgteI'
+            'url': 'https://content.googleapis.com/calendar/v3/calendars/westernsem.edu_747qjgic8daafbdlec3cl0m11s@group.calendar.google.com/events?maxResults=15&orderBy=startTime&showDeleted=false&singleEvents=true&timeMin=' + new Date().toISOString() + '&minAccessRole=reader&key='
         },
         hours_all: {
             'type': '',
