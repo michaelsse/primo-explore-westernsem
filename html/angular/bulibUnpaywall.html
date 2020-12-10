@@ -1,0 +1,31 @@
+<unpaywall ng-if="$ctrl.show">
+    <div layout="flex" ng-if="$ctrl.best_oa_link" class="layout-row">
+        <a ng-click="$ctrl.trackLinkClick($ctrl.doi)" target="_blank" ng-href="{{$ctrl.best_oa_link}}">
+            <prm-icon translate-attr-title="delivery.code.open_access" icon-type="svg" svg-icon-set="action" icon-definition="ic_lock_open_24px" style="color: #f68212;"></prm-icon>
+            <strong translate="delivery.code.open_access"></strong>
+            <span translate="delivery.code.unpaywall"></span>
+            <span ng-if="$ctrl.showVersionLabel && $ctrl.best_oa_version">&nbsp({{$ctrl.best_oa_version}} version)</span>
+            <prm-icon external-link icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new" aria-hidden="true"></prm-icon>
+        </a>
+    </div>
+    <div ng-if="$ctrl.showDebugTable" class="layout-row">
+        <table>
+            <tr>
+                <td><strong>doi</strong></td>
+                <td>{{$ctrl.doi}}</td>
+            </tr>
+            <tr>
+                <td><strong>is_OA</strong></td>
+                <td>{{$ctrl.is_oa}}</td>
+            </tr>
+            <tr>
+                <td><strong>best_oa_link</strong></td>
+                <td>{{$ctrl.best_oa_link}}</td>
+            </tr>
+            <tr>
+                <td><strong>best_oa_version</strong></td>
+                <td>{{$ctrl.best_oa_version}}</td>
+            </tr>
+        </table>
+    </div>
+</unpaywall>

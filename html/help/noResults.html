@@ -1,0 +1,55 @@
+<md-card class="custom-card zero-margin _md md-primoExplore-theme">
+    <md-card-title>
+        <md-card-title-text>
+            <!--<span translate="" class="md-headline">{{'nui.noresults.title' | translate}}</span>-->
+            <p><span class="md-headline ng-scope">There are no results matching your search:<blockquote><i>{{$ctrl.getSearchTerm()}}</i></blockquote></span></p>
+			<p ng-if="$ctrl.pciSetting !== 'true'">
+				<md-button ng-href="search?vid=01COL_WTS:WTS&tab=Everything&search_scope=MyInst_and_CI&query={{$ctrl.getQuery}}&pcAvailability=true"><b>Try again searching items held at other libraries?</b></md-button>
+			</p>
+		</md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <md-subheader class="md-primary">Suggestions:</md-subheader>
+        <md-list>
+        	<md-list-item class="ng-scope" flex>
+				<div class="md-list-item-text prm-help">
+					<p>Check the spelling of your search terms</p>
+				</div>
+			</md-list-item>
+        	<md-list-item class="ng-scope" flex>
+				<div class="md-list-item-text prm-help">
+					<p>Click <a ng-href="search?vid=01COL_WTS:WTS&tab=Everything&search_scope=MyInst_and_CI&query={{$ctrl.getQuery}}&pcAvailability=true"><em>Expand My Results</em></a></p>
+				</div>
+			</md-list-item>
+            <md-list-item class="ng-scope" flex>
+				<div class="md-list-item-text prm-help">
+					<p>Try different keywords</p>
+				</div>
+			</md-list-item>
+            <md-list-item class="ng-scope" flex>
+				<div class="md-list-item-text prm-help">
+					<p>Try more general keywords</p>
+				</div>
+			</md-list-item>
+            <md-list-item class="ng-scope" flex>
+				<div class="md-list-item-text prm-help">
+					<p>Try fewer keywords</p>
+				</div>
+			</md-list-item>
+			<md-list-item class="ng-scope" flex>
+				<div class="md-list-item-text prm-help">
+					<p>Try your search in one of our <a ng-href="https://guides.westernsem.edu/az.php?q=" target="_blank">Databases<prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon></a></p>
+				</div>
+			</md-list-item>
+        </md-list>
+		<prm-lib-guides-az>
+			<div id="s-lg-widget-1587652524664"></div>
+		</prm-lib-guides-az>
+			<div class="s-lg-widget-list-more-results s-lib-greyout pad-top-med pad-left-sm">
+				<prm-icon icon-type="svg" svg-icon-set="primo-ui" icon-definition="magnifying-glass"></prm-icon>
+				<a ng-href="https://guides.westernsem.edu/az.php?q=" target="_blank"><span translate="nui.mainmenu.description.DATABASES"></span>
+					<prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
+				</a>
+			</div>
+    </md-card-content>
+</md-card>

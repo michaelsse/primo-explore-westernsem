@@ -1,0 +1,742 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans:wght@400;600&display=swap');
+
+/*Uncomment the follwoing lines to move facets to the left*/
+
+/*
+prm-search > md-content.md-primoExplore-theme .main {
+    display: -webkit-flex; !* Safari *!
+    -webkit-flex-flow: row-reverse wrap; !* Safari 6.1+ *!
+    display: flex;
+    flex-flow: row-reverse wrap;
+
+}
+.screen-gt-sm .sidebar{
+    webkit-flex: 0 0 15%;
+    flex: 0 0 15%;
+}
+
+*/
+
+body {
+  font-family: "Open Sans","HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  font-style: normal;
+  font-size: 14px;
+  background-color: #ebebeb;
+}
+
+prm-facet {
+  font-size: .9em;
+}
+
+prm-brief-result .item-title {
+  font-weight: 500;
+}
+
+prm-login-item h3 {
+  color: #3ff !important;
+}
+
+prm-login h2, prm-login-item p {
+  color: #fff !important;
+}
+
+div.md-list-item-text.prm-help {
+	display: list-item;
+	margin-left: 15px;
+	min-height: min-content;
+}
+
+.duedate > span, .ext_not_restricted > span, .fulltext > span, .fulltext_linktorsrc > span, .fulltext_linktorsrc_newspaper > span, .fulltext_linktorsrc_topic > span, .fulltext_newspaper > span, .fulltext_topic > span, .getit > span, .login-dialog .collapsable-container md-list md-list-item .md-list-item-inner, .login-dialog .md-list[class$="-line"] md-list-item .md-list-item-text .list-item-title, .login-dialog .md-list[class$="-line"] md-list-item .md-list-item-text h3, .login-dialog .md-list[class$="-line"] md-list-item > .md-no-style .md-list-item-text .list-item-title, .login-dialog .md-list[class$="-line"] md-list-item > .md-no-style .md-list-item-text h3, .login-dialog .md-list md-list-item .md-list-item-text .list-item-title, .login-dialog .md-list md-list-item .md-list-item-text h3, .login-dialog .md-list md-list-item > .md-no-style .md-list-item-text .list-item-title, .login-dialog .md-list md-list-item > .md-no-style .md-list-item-text h3, .login-dialog md-list md-list-item .md-list-item-text .list-item-title, .login-dialog md-list md-list-item .md-list-item-text h3, .login-dialog md-list md-list-item > .md-no-style .md-list-item-text .list-item-title, .login-dialog md-list md-list-item > .md-no-style .md-list-item-text h3, .md-button.arrow-link-button .button-content, .md-button.arrow-link-button [link-arrow], .md-button.arrow-link-button prm-usage-metrics div[id^="_altmetric_popover_el"].altmetric-embed div#_altmetric_container.altmetric_container .link-to-altmetric-details-tab.button-content, .not_restricted > span, .prm-links, .restricted > span, .separate-list-items md-list-item .item-loader-with-text .md-button, .tiles-grid-tile .tile-header .header-link .arrow-icon, .tiles-grid-tile .tile-header .header-link:focus, .tiles-grid-tile .tile-header .header-link:hover, .tiles-grid-tile .tile-header .md-button, .worldcat > span, [class*="_more"] > span, [class*="_unknown"] > span, [class*="available"] > span, [class*="check_"] > span, [class*="does_not_exist"] > span, [class*="FT"] > span, [class*="may_"] > span, [class*="NFT"] > span, [class*="no_"] > span, [class*="unavailable"] > span, a, md-grid-tile .tile-header .header-link .arrow-icon, md-grid-tile .tile-header .header-link:focus, md-grid-tile .tile-header .header-link:hover, md-grid-tile .tile-header .md-button, md-input-container.has-fixed-message [ng-message] a, md-list-item.list-item-as-link, md-tabs.tabs-as-app .back-button, md-tabs.tabs-as-links md-tab-item, md-tabs.tabs-as-links md-tab-item:not([disabled]), prm-tags-list .md-chips .md-chip .md-chip-content strong, prm-tags-list .md-chips md-chip .md-chip-content strong, prm-tags-list md-chips .md-chip .md-chip-content strong, prm-tags-list md-chips md-chip .md-chip-content strong, prm-usage-metrics div[id^="_altmetric_popover_el"].altmetric-embed div#_altmetric_container.altmetric_container .md-button.arrow-link-button .link-to-altmetric-details-tab.button-content, prm-usage-metrics div[id^="_altmetric_popover_el"].altmetric-embed div#_altmetric_container.altmetric_container a.link-to-altmetric-details-tab {
+  color: #17486e;
+}
+
+.link-alt-color, .prm-secondary-color.prm-hue1, .result-item-actions .pin-button, .section-title prm-icon, prm-account-overview .institutions-list md-list-item.is-selected .institution-name, prm-add-query-to-saved-searches .custom-button.pin-button, prm-pre-filters md-input-container.is-active :focus, prm-recomendation-item .media-on-hover .pin-button, prm-search-bookmark-filter .prm-hue1.md-button, prm-topbar .prm-hue1.top-nav-bar, prm-tree-nav md-list md-list-item .md-button.branch-name.is-selected, prm-tree-nav md-list md-list-item md-button.branch-name.is-selected {
+  color: #127781;
+}
+
+.md-button.button-confirm, .service-form-static-panel button.button-confirm prm-icon + span, .service-form-static-panel button.button-confirm prm-icon svg path {
+  color: #0f7d00;
+}
+
+span.best-location-library-code.locations-link {
+   display: none;
+}
+
+/*Login Dialog*/
+md-dialog.light-on-dark-dialog, md-card.login-card.login-dialog {
+  background-color: rgba(0,0,0,0.6);
+  border: 1px solid #fff;
+  border-radius: 3px;
+  color: #fff;
+}
+/* Login Dialog Background */
+/*.background-dark > div.md-dialog-container, prm-stand-alone-login > div.layout-fill.layout-align-start-center.layout-column {
+  background: no-repeat center url("../img/background-07.jpg");
+  background-size: cover;
+}
+*/
+/* Login Dialog Background */
+/*Login Dialog*/
+
+prm-request .content-header h3 {
+  margin: 5px !important;
+  padding 5px;
+}
+
+prm-request div.layout-align-center-center {
+  width: 85%;
+  margin: 0 auto;
+}
+
+prm-request div.service-form-dynamic-panel md-input-container {
+  max-width: 100%;
+  min-width: 75%;
+}
+
+prm-stand-alone-login prm-logo > div#banner img {
+  padding: 25px;
+  background-color: #002B5C;
+}
+
+prm-stand-alone-login > div {
+  height: 100vh !important;
+}
+
+label[for="prm_almaResourceSharing.preferredLocalPickupLocation"] {
+  overflow: visible !important;
+}
+
+.section-content .md-chips .md-chip .md-chip-content {
+  max-width: calc(100% - 1.5em);
+  overflow: hidden;
+  padding-left: 1.3em;
+  padding-right: .25em;
+  color: #6d6d6d;
+  border-radius: 3px;
+}
+
+.md-chip-content.layout-align-start-center.layout-row > .facet-title {
+  padding-left: 1.5em;
+}
+
+strong.facet-title {
+  padding: .1em .1em .1em .25em;
+}
+
+strong.facet-title:focus > a.text-number-space, strong.facet-title:hover > a.text-number-space {
+  color: #fff;
+}
+
+strong.facet-number-space a.text-number-space:focus, strong.facet-number-space a.text-number-space:hover {
+  box-shadow:none;
+}
+
+md-checkbox[ng-checked="facet.checked"] {
+  left: 0 !important;
+  height: 18px !important;
+  width: 18px !important;
+}
+
+prm-location-items div.tab-content-header span.availability-status.available {
+  text-transform: uppercase;
+}
+
+prm-location-items div.tab-content-header span[ng-if="$ctrl.currLoc.location.callNumber"] {
+  color: #9E1B78;
+  font-family: "Lucida Console", Courier, Monaco, monospace;
+  font-weight: bold;
+  margin-left: 1px;
+  display: inline-block;
+}
+
+prm-search-bar,prm-atoz-search-bar,prm-browse-search-bar,prm-tags-search-bar,div.advanced-search-backdrop.visible {
+  background-repeat: no-repeat;
+  background-position: left 25%;
+  background-image: url(../img/CookLibraryHeader.jpg);
+  background-attachment: scroll;
+   background-size: cover;
+}
+
+prm-no-search-result > md-card.default-card {
+  display: none;
+}
+
+button.switch-to-simple {
+  color: #ffffff !important;
+}
+
+.prm-primary-bg.prm-hue1, prm-atoz-search-bar.prm-hue1, prm-browse-search-bar.prm-hue1, prm-collection-gallery-header .prm-hue1.collection-header-inner, prm-newspapers-search-bar.prm-hue1, prm-search-bar.prm-hue1, prm-spinner.prm-hue1.overlay-cover.light-on-dark::after, prm-tags-search-bar.prm-hue1, prm-topbar .top-nav-bar {
+  background-color: #000000;
+}
+
+.prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-newspapers-search-bar, prm-spinner.overlay-cover.light-on-dark::after, prm-tags-search-bar {
+  background-color: #222222;
+}
+
+button.button-link.link-alt-color.zero-margin.md-button.md-primoExplore-theme.md-ink-ripple:hover {
+  background: no-repeat center rgba(128, 128, 128, 0.15);
+}
+
+button.switch-to-simple.md-button, button.switch-to-advanced.md-button,prm-pre-filters md-select {
+  background: no-repeat center rgba(0, 0, 0, 0.5);
+}
+
+button.switch-to-simple.md-button:hover, button.switch-to-advanced.md-button:hover, prm-pre-filters md-select:hover {
+  background: no-repeat center rgba(128, 128, 128, 0.7);
+}
+
+span[translate="fulldisplay.locations.showmore"].bold-text.padding-small {
+  color: #f00;
+}
+
+span[translate="loans.max_renew_date"] {
+  display: none;
+}
+
+span[ng-if="$ctrl.location.callNumber"] {
+  color: #3d6e94;
+  font-family: "Lucida Console", Courier, Monaco, monospace;
+  display: inline-block;
+}
+
+span.availability-status.unavailable ~ span[ng-if="$ctrl.location.callNumber"] {
+  color: lightsteelblue;
+}
+
+.md-button.icon-button-with-text, .saved-query-list > md-nav-bar .md-nav-item .md-button, prm-action-list > md-nav-bar .md-nav-item .md-button {
+  font-weight: normal;
+  letter-spacing: inherit;
+}
+
+.md-button {
+  white-space: normal;
+}
+
+md-card.alert-bar {
+  background-color: inherit;
+}
+
+#services-index button.zero-margin.button-right-align.button-link.md-button.md-primoExplore-theme.md-ink-ripple {
+  font-size: .85em;
+}
+
+.best-location-library-code.locations-link {
+  font-variant: small-caps;
+}
+
+.best-location-sub-location.locations-link,span[ng-if="$ctrl.currLoc.location && $ctrl.currLoc.location.subLocation && $ctrl.getSubLibraryName($ctrl.currLoc.location)"] {
+  color: #943d56;
+}
+
+a[href^="https://col-hope"] {
+  color: #002244;
+}
+
+/* ALWAYS SHOW LOCK ON FACETS AREA */
+prm-facet prm-breadcrumbs div.md-chip-content strong, prm-breadcrumbs .md-chip.wrapping-chip .md-chip-content strong {
+  padding-left: 22px;
+}
+
+prm-breadcrumbs .md-chips .md-chip-content .persistence-button {
+  opacity: 1;
+  transform: none;
+  padding-left: -2px;
+}
+
+prm-breadcrumbs .md-chip.persistent-facet strong {
+  padding-left: 0;
+}
+
+prm-breadcrumbs .md-chip.persistent-facet .md-chip-content .persistence-button {
+  left: -1px;
+}
+/* ALWAYS SHOW LOCK ON FACETS AREA */
+
+/** HathiTrust Module **/
+span.umnHathiTrustLink {
+  margin-left: -5px;
+}
+
+span.umnHathiTrustLink md-icon svg {
+  height: 1.2em;
+  filter: grayscale(100%);
+}
+
+span.umnHathiTrustLink:hover md-icon svg {
+  filter: grayscale(0%);
+}
+/** HathiTrust Module **/
+
+a.zero-margin.flex-button:hover {
+  background-color: #222222;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.bar.alert-bar, .classic-input .search-scope, .prm-alert-bg {
+  background-color: #d9edf7;
+}
+
+.bar.alert-bar, .classic-input .search-scope, .prm-alert-border {
+  border-color: #85c5e5;
+}
+
+span.availability-status.no_fulltext {
+  color: #ae4500;
+}
+
+/* altmetrics */
+.altmetric-embed {
+  padding: 1.5em;
+}
+/** QR Code this Page **/
+div#qrcode > img {
+  margin: 0 auto;
+}
+/* Database List */
+prm-lib-guides-az .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+prm-lib-guides-az .form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
+
+prm-lib-guides-az .form-inline .form-control {
+  display: inline-flex;
+  width: auto;
+  max-width: 85%;
+  vertical-align: middle;
+}
+
+prm-lib-guides-az .btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+prm-lib-guides-az .btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+prm-lib-guides-az .pad-top-med {
+  padding-top: 10px;
+}
+
+prm-lib-guides-az .margin-left-sm,prm-lib-guides-az .pad-left-sm {
+  margin-left: 5px !important;
+}
+
+prm-lib-guides-az .s-lg-no-val,prm-lib-guides-az .s-lg-text-greyout,prm-lib-guides-az .s-lib-greyout {
+  color: #666;
+}
+
+prm-lib-guides-az select:focus {
+	outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 15px #9ecaed;
+}
+
+prm-lib-guides-az select:hover {
+	background-color: #f3f3f3;
+}
+/* Database List */
+/* Library HUD */
+library-hud .md-button {
+  vertical-align: middle;
+}
+
+/* Library HUD */
+/** Libraryh3lp Chat widget	**/
+.libraryh3lp_slide_out {
+  width: 400px;
+  height: 270px;
+  position: fixed;
+  -webkit-transition-duration: 0.6s;
+  -moz-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+  background-color: rgb(249, 249, 249);
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.libraryh3lp_slide_out header {
+  display: block;
+}
+
+.libraryh3lp_slide_out header a {
+  text-align: center;
+  padding: 10px;
+  display: block;
+  position: absolute;
+  border-width: 0;
+  border-style: solid;
+  background-color: #D93A1A;
+}
+
+#library3help.needs-js {
+  width: 400px;
+  height: 100%;
+  padding: 0 2px 0 0;
+  box-sizing: border-box;
+}
+
+.libraryh3lp_slide_out-l.open {
+  left: 0px;
+}
+
+.libraryh3lp_slide_out-l header {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+}
+
+.libraryh3lp_slide_out-l header a {
+  right: 10px;
+}
+
+.libraryh3lp_slide_out-r {
+  top: 100px;
+  right: -400px;
+}
+
+.libraryh3lp_slide_out-r.open {
+  right: 0px;
+}
+
+.libraryh3lp_slide_out-r header {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+}
+
+.libraryh3lp_slide_out-r header a {
+  left: 10px;
+}
+
+.libraryh3lp_slide_out-b {
+  right: 100px;
+  bottom: -2px;
+  height: 0;
+}
+
+.libraryh3lp_slide_out-b header a {
+  left: 10px;
+  bottom: 0px;
+  border-width: 1px 1px 0px 1px;
+}
+
+.libraryh3lp_slide_out iframe {
+  width: 100%;
+  height: 268px;
+  background-color: #f9f9f9;
+  border: 0px;
+  box-sizing: border-box;
+}
+/** Libraryh3lp Chat widget **/
+/** Alerts **/
+.alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-heading {
+  color: inherit;
+}
+
+.alert-link {
+  font-weight: bold;
+}
+
+.alert-dismissible .close {
+  position: relative;
+  top: -0.75rem;
+  right: -1.25rem;
+  padding: 0.75rem 1.25rem;
+  color: inherit;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d0e9c6;
+  color: #3c763d;
+}
+
+.alert-success hr {
+  border-top-color: #c1e2b3;
+}
+
+.alert-success .alert-link {
+  color: #2b542c;
+}
+
+.alert-info {
+  background-color: #d9edf7;
+  border-color: #bcdff1;
+  color: #31708f;
+}
+
+.alert-info hr {
+  border-top-color: #a6d5ec;
+}
+
+.alert-info .alert-link {
+  color: #245269;
+}
+
+.alert-warning {
+  background-color: #fcf8e3;
+  border-color: #faf2cc;
+  color: #8a6d3b;
+}
+
+.alert-warning hr {
+  border-top-color: #f7ecb5;
+}
+
+.alert-warning .alert-link {
+  color: #66512c;
+}
+
+.alert-danger {
+  background-color: #f2dede;
+  border-color: #ebcccc;
+  color: #a94442;
+}
+
+.alert-danger hr {
+  border-top-color: #e4b9b9;
+}
+
+.alert-danger .alert-link {
+  color: #843534;
+}
+/** Alerts **/
+/** Help **/
+.wtsCook-help__text-wrapper {
+  max-width: 600px;
+  padding: 20px;
+}
+/** Help **/
+/** Angular Cookie Law **/
+.cl-banner {
+  background: #333;
+  height: auto;
+  min-height: 24px;
+  line-height: 24px;
+  color: #eeeeee;
+  text-align: center;
+  padding: 15px 25px;
+  z-index: 10000;
+  position: fixed;
+  left: 0;
+  width: 100%;
+}
+
+.cl-banner.top {
+  top: 0;
+}
+
+.cl-banner.bottom {
+  bottom: 0;
+}
+
+/*
+.cl-banner.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.cl-banner.fixed.bottom {
+  bottom: 0;
+  top: auto;
+}
+*/
+
+.cl-banner p {
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.cl-banner a {
+  color: #39efff;
+  display: inline-block;
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 0 6px;
+  margin: 11px 20px 0 20px;
+}
+
+.cl-banner a:hover {
+  color: #fff;
+}
+
+.cl-banner .cl-accept {
+  background: #007700;
+}
+
+.cl-banner .cl-accept:hover {
+  background: #009900;
+}
+
+.cl-banner .cl-disable {
+  background: #990000;
+}
+
+.cl-banner .cl-disable:hover {
+  background: #bb0000;
+}
+
+.cl-banner .cl-policy {
+  background: #0033bb;
+}
+
+.cl-banner .cl-policy:hover {
+  background: #0055dd;
+}
+/** Angular Cookie Law **/
+/** Linked Open Data Author Card **/
+.full-view-section.lod-author-card {
+  background-color: #f3f3f3;
+  margin-top:0px;
+  padding-left: 3em;
+}
+
+md-progress-circular svg path {
+  stroke: black;
+}
+
+div.lod-author-card .section-body {
+  margin-top: 10px;
+}
+/** Linked Open Data Author Card **/
+/** prmExploreLibchat **/
+#libraryh3lp-chat > header > a {
+  border-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  background-color: rgb(217, 58, 26);
+  box-shadow: rgb(204, 204, 204) 0px 0px 5px;
+  border-width: 0px 4px 4px;
+}
+/** prmExploreLibchat **/
+/** LibCal Appointments **/
+#mysched_0 {
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  color: #333333;
+  font: 14px Arial, Helvetica, Verdana;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+#mysched_0:hover, #mysched_0:active, #mysched_0:focus {
+  opacity: 0.6;
+}
+#mysched_0-iframe {
+  padding:0;
+  margin:0;
+  border:0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+/** LibCal Appointments **/
+/** Footer **/
+#footer {
+  padding-top:30px;
+}
+#footer > div:first-child {
+  max-width:1300px;
+  width:100%;
+  margin:0 auto;
+}
+#footer div ul {
+  list-style:none;
+  padding-left:unset;
+}
+#footer a {
+  color: #7f7f7f;
+  font-family: "open sans", "HelveticaNeue", "Helvetica Neue", "Helvetica-Neue", Helvetica, Arial, sans-serif;
+  font-size:.85em;
+  line-height:1.3em;
+}
+#footer .fa {
+	display:none;
+}
+#footer h3 {
+  font-family: "Merriweather", arial, sans-serif;
+}
+#footer #logof {
+  display:block;
+  margin:0 auto;
+}
+#footer #wpcom_social_media_icons_widget-2 ul {
+  list-style:none;
+  padding-left:unset;
+}
+@media only screen and (max-width: 600px) {
+  #footer .layout-align-xs-center-center li, #footer .layout-align-xs-center-center h3 {
+    text-align: center;
+  }
+  #footer .layout-align-xs-center-center ul {
+    margin: 0 auto 1em auto;
+  }
+  #footer #wpcom_social_media_icons_widget-2 ul {
+    margin: 0 auto;
+    max-width: 10%;
+  }
+}
+/** Footer **/

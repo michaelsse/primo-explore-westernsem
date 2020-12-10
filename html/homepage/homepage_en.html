@@ -1,0 +1,185 @@
+<md-content layout-xs="column" layout="row">
+    <library-hud flex="100" layout-align="center center"></library-hud>
+</md-content>
+<md-content layout-xs="column" layout="row">
+    <div flex="100" layout="column">
+        <md-card class="default-card">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">What's included in Primo?</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <img ng-src="custom/01COL_WTS-WTS/img/info_graphic.PNG" width="100%" alt="Primo Information Graphic" aria-hidden="true">
+				<md-list class="accessible-only md-list-item-text" flex>
+                    <md-list-item><span>Books &amp; Ebooks</span></md-list-item>
+                    <md-list-item><span>Archives &amp; Special Collections</span></md-list-item>
+                    <md-list-item><span>Theses &amp; Dissertations</span></md-list-item>
+                    <md-list-item><span>Audio-visual Resources</span></md-list-item>
+                    <md-list-item><span>Journal &amp; News Articles</span></md-list-item>
+                    <md-list-item><span>Journals &amp; Conference Proceedings</span></md-list-item>
+                </md-list>
+            </md-card-content>
+        </md-card>
+        <md-card class="default-card">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Search tips</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <md-list flex>
+					<md-list-item>
+						<div class="md-list-item-text prm-help">
+							<p>Use "Expand my results" to perform a more comprehensive search.</p>
+							<p>Results produced by "Expand my results" may not be available or owned by Western Theological Seminary.</p>
+						</div>
+                    </md-list-item>				
+                    <md-list-item>
+						<div class="md-list-item-text prm-help">
+							<p>Use an asterisk * as a wildcard to replace one or more characters.</p>
+							<p>Examples: cat* finds cat, cats, catalog, etc.; wom*n finds woman and women</p>
+						</div>
+                    </md-list-item>
+					<md-list-item>
+						<div class="md-list-item-text prm-help">
+							<p>Enclosing a phrase in quotation marks (" ") finds an exact match.</p>
+							<p>Example: "Puritan Theology"</p>
+						</div>
+                    </md-list-item>
+					<md-list-item>
+						<div class="md-list-item-text prm-help">
+							<p>Boolean Operators fine-tune your searches by using the operators "AND", "OR", and "NOT" to combine keywords to broaden or narrow your search. You must always type these operators in capital letters.</p>
+						</div>
+                    </md-list-item>
+					<md-list-item>
+						<div class="md-list-item-text prm-help">
+							<p>Some online resources are not discoverable in Primo. Also consult our other 
+							<a ng-href="https://guides.westernsem.edu/az.php" target="_blank">Online Databases
+							<prm-icon external-link=" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
+							</a>.</p>
+						</div>
+                    </md-list-item>
+                </md-list>
+            </md-card-content>
+        </md-card>
+    </div>
+    <div flex="100" layout="column">
+		<md-card class="default-card">
+			<md-card-title>
+				<md-card-title-text>
+					<span class="md-headline" translate="nui.mainmenu.description.ResearchHelp"></span>
+				</md-card-title-text>
+			</md-card-title>
+			<md-card-content>
+				<div ng-controller="libCalApptDialogComponentController" id="popupContainer" ng-cloak>
+					<md-button class="md-primary md-raised" ng-click="showCalendar($event)" translate="nui.mainmenu.description.ResearchHelp"></md-button>
+				</div>
+			</md-card-content>
+		</md-card>
+		<md-card class="default-card">
+			<md-card-title>
+				<md-card-title-text>
+					<span class="md-headline" translate="nui.mainmenu.description.ReserveSpace"></span>
+				</md-card-title-text>
+			</md-card-title>
+			<md-card-content>
+				<div ng-controller="libCalBookingDialogComponentController" id="libCalBookingDialog" ng-cloak>
+					<md-button class="md-primary md-raised" ng-click="showBooking($event)" translate="nui.mainmenu.description.ReserveSpace">Reserve a Library Space</md-button>
+				</div>
+			</md-card-content>
+		</md-card>
+        <md-card class="default-card">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline" translate="nui.mainmenu.description.DatabaseSearch"></span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+				<prm-lib-guides-az>
+					<div id="s-lg-widget-1587652524664"></div>
+				</prm-lib-guides-az>					
+					<div class="s-lg-widget-list-more-results s-lib-greyout pad-top-med pad-left-sm">
+						<prm-icon icon-type="svg" svg-icon-set="primo-ui" icon-definition="magnifying-glass"></prm-icon>
+						<a ng-href="https://guides.westernsem.edu/az.php?q=" target="_blank"><span translate="nui.mainmenu.description.DATABASES"></span>
+							<prm-icon external-link=" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
+						</a>
+					</div>
+            </md-card-content>
+        </md-card>
+        <md-card class="default-card">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">How does this work?</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p>
+                    Primo provides simple, one-stop searching for books and e-books, videos, articles, digital media, and more.
+                </p>
+                <p>
+                    Primo also helps you manage your research. Sign-in in order to:
+                </p>
+                <ul>
+                    <li>Renew books</li>
+                    <li>Request that books be placed on hold for you</li>
+                    <li>Create favorites lists</li>
+                    <li>View full search results. (Some databases show results only when you're signed in.)</li>
+                </ul>
+                <p><em>Suggestion:</em><br/>Install 
+				<a ng-href="https://www.zotero.org/download/" target="_blank">Zotero
+				<prm-icon external-link=" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new"></prm-icon>
+				</a> to manage your citations</p>
+            </md-card-content>
+        </md-card>
+        <md-card class="default-card">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">What am I searching? </span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <md-list flex>
+                    <md-list-item class="md-list-item-text prm-help">
+						<div class="md-list-item-text">
+							<span><a ng-href="./search?tab=Everything&amp;search_scope=MyInst_and_CI&amp;vid=01COL_WTS:WTS" role="button"><b>Books+Media+Articles</b></a> &mdash; This is the broadest search. Find books, e-books, journals, DVDs and more in Cook Library, as well as online articles to which the Cook Library subscribes.</span>
+						</div>
+					</md-list-item>
+                    <md-list-item class="md-list-item-text prm-help">
+						<div class="md-list-item-text">
+							<span><a ng-href="./search?tab=LibraryCatalog&amp;search_scope=MyInstitution&amp;vid=01COL_WTS:WTS" role="button"><b>Library Catalog</b></a> &mdash; Find books and more at the Cook Library.</span>
+						</div>
+					</md-list-item>
+					<md-list-item class="md-list-item-text prm-help">
+						<div class="md-list-item-text">
+							<p>
+								<span><a ng-href="./search?tab=EBSCO&amp;search_scope=EBSCO&amp;vid=01COL_WTS:WTS" role="button"><b>EBSCOhost</b></a> &mdash; Find articles in Atla Religion Database, Old Testament Abstracts, New Testament Abstracts and other EBSCOhost databases.</span>
+							</p>
+							<p><em>You must be signed into Primo and a current Western Theological Seminary student, faculty member, or employee to use this resource.</em></p>
+						</div>
+					</md-list-item>
+                    <md-list-item class="md-list-item-text prm-help">
+						<div class="md-list-item-text">
+							<span><a ng-href="./search?tab=CentralIndex&amp;search_scope=CentralIndex&amp;vid=01COL_WTS:WTS" role="button"><b>Articles &amp; more</b></a> &mdash; Find online articles to which the Cook Library subscribes.</span>
+						</div>
+					</md-list-item>
+                    <md-list-item class="md-list-item-text prm-help">
+						<div class="md-list-item-text">
+							<span><a ng-href="./search?tab=CourseReserves&amp;search_scope=CourseReserves&amp;vid=01COL_WTS:WTS" role="button"><b>Course Reserves</b></a> &mdash; Find items which are on reserve by course name, course ID, instructor and department.</span>
+						</div>
+					</md-list-item>
+                    <md-list-item class="md-list-item-text prm-help">
+						<div class="md-list-item-text">
+							<span><a ng-href="./search?tab=WorldCat&amp;search_scope=WORLDCAT&amp;vid=01COL_WTS:WTS" role="button"><b>WorldCat</b></a> &mdash; Search WorldCat for materials not owned by Cook Library.</span>
+						</div>
+					</md-list-item>
+					<md-list-item class="md-list-item-text prm-help">
+						<div class="md-list-item-text">
+							<span><a ng-href="./search?tab=SPEC_COLL&amp;search_scope=SPEC_COLL&amp;vid=01COL_WTS:WTS" role="button"><b>Special Collections</b></a> &mdash; Find items in Cook Library Special Collections.</span>
+						</div>
+					</md-list-item>
+                </md-list>
+            </md-card-content>
+        </md-card>
+    </div>
+</md-content>

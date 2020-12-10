@@ -1,0 +1,30 @@
+<div ng-show="$ctrl.publisherLink" rel="{{$ctrl.publisherLink}}">
+    <md-list layout="column" class="separate-list-items md-primoExplore-theme layout-column" role="list">
+        <md-list-item class="md-3-line in-element-dialog-parent _md pointer" (click)="$ctrl.onClick($event, item)" tabindex="0" aria-label="Available online, opens in a new window" ng-class="{'pointer' : $ctrl.isLinkable(item)}" role="listitem">
+            <div class="in-element-dialog-context layout-row flex" layout="row" flex="">
+                <div class="md-list-item-text layout-wrap layout-row flex" layout="row" layout-wrap="" flex="">
+                    <div flex="" flex-xs="100" class="flex-xs-100 flex">
+                        <!---->
+                        <!---->
+                        <h3>
+                            <!---->
+                            <a class="item-title md-primoExplore-theme" ng-href="{{$ctrl.publisherLink}}" aria-label="Available online, opens in a new window" title="Available online, opens in a new window" target="_blank">{{$ctrl.sourceInfo}}</a>
+                            <!---->
+                            <!---->
+                        </h3>
+                        <!---->
+                        <!---->
+                    </div>
+                </div>
+                <div class="_md-secondary-container">
+                    <!---->
+                    <!---->
+                    <prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new" aria-hidden="true"></prm-icon>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div class="_md-secondary-container"></div>
+        </md-list-item>
+    </md-list>
+</div>

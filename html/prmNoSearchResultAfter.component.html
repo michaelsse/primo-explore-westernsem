@@ -1,0 +1,21 @@
+<md-card class="custom-card zero-margin _md md-primoExplore-theme">
+    <md-card-title>
+        <md-card-title-text>
+            <!--<span translate="" class="md-headline">{{'nui.noresults.title' | translate}}</span>-->
+            <span translate="" class="md-headline">No results found</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <p>
+            <span>There are no results matching your search "{{ $ctrl.getQuery() }}".</span>
+        </p>
+        <p><span class='bold-text'>Suggestions:</span></p>
+        <ul>
+        	<li>Check the spelling of your search terms</li>
+        	<li>Click <em>Expand My Results</em></li>
+                <li>Try different keywords</li>
+                <li>Try more general keywords</li>
+                <li>Try fewer keywords</li>
+        </ul>
+    </md-card-content>
+</md-card>

@@ -1,0 +1,29 @@
+<div layout="row" layout-xs="column" class="layout-block-xs layout-xs-column layout-row" ng-show="googleDesc">
+    <div flex-gt-sm="20" flex-gt-xs="25" flex="" class="flex-gt-xs-25 flex-gt-sm-20 flex">
+        <span class="bold-text word-break" data-details-label="moreinfo" translate="fulldisplay.moreinfo" translate-attr-title="fulldisplay.moreinfo"></span>
+    </div>
+    <div class="item-details-element-container flex" flex="">
+        <!---->
+        <div class="item-details-element">
+            <!---->
+            <div layout="column" class="word-break layout-column" aria-hidden="false">
+                <div aria-hidden="false" class="">
+                    <!---->
+                    <div>
+                        <span>{{ googleDesc }}</span>
+                        <!---->
+                    </div>
+                    <div>
+                        <small style="float:right"><a ng-href="{{ googleInfoLink }}" target="_blank">Provided by Google Books</a></small>
+                    </div>
+                    <!---->
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!---->
+    </div>
+</div>
+<prm-service-details-after-2 parent-ctrl="$ctrl"></prm-service-details-after-2>
+<prm-service-details-after-3 parent-ctrl="$ctrl"></prm-service-details-after-3>
+<lod-author-card-component parent-ctrl="$ctrl"></lod-author-card-component>

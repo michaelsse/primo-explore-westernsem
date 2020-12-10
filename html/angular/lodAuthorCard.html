@@ -1,0 +1,38 @@
+<div layout="row" layout-xs="column" aria-hidden="false" ng-if="bibcard">
+    <div flex-gt-sm="20" flex-gt-xs="25" flex="">
+        <span class="bold-text word-break" translate-attr-title="custom.authorCard.moreInfo" translate="custom.authorCard.moreInfo"></span>
+    </div>
+    <div class="item-details-element-container flex" flex="">
+        <!---->
+        <div class="item-details-element">
+            <!---->
+            <div layout="column" class="word-break" aria-hidden="false">
+                <div aria-hidden="false">
+                    <div ng-if="!loading">
+                        <md-card ng-if="bibcard">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <!---->
+                                    <span class="md-headline">{{bibcard.name}}</span>
+                                    <span class="md-subhead">{{bibcard.wikidata_entity.description}} ({{bibcard.birth_date | date:'mediumDate'}}-{{bibcard.death_date | date:'mediumDate'}})</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-card-content>
+                                <div layout="row" layout-xs="column">
+                                    <div flex="" class="lod-author-card-abstract" ng-if="bibcard.dbpedia_resource.abstract">{{bibcard.dbpedia_resource.abstract}}</div>
+                                    <div flex="33" ng-if="bibcard.dbpedia_resource.depiction"><img ng-src="{{bibcard.dbpedia_resource.depiction|secureSrc}}" style="width:100%;height:auto!important;margin:0 1em;" alt="{{bibcard.name}}"></div>
+                                </div>
+                                <div ng-if="bibcard.wikidata_entity.notable_works && bibcard.wikidata_entity.notable_works.length>0">
+                                    <span class="md-subhead" translate="custom.authorCard.notableWorks"></span>
+                                    <ul>
+                                        <li ng-repeat="work in bibcard.wikidata_entity.notable_works"><a ng-href="{{$ctrl.searchUrl + '&query=title,exact,' + (work | escape)}}" target="_blank">{{work}}</a></li>
+                                    </ul>
+                                </div>
+                            </md-card-content>
+                        </md-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
