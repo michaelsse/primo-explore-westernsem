@@ -5,7 +5,7 @@
             <span class="md-headline">{{ library.name }}</span>
             <span ng-if="library.hours" class="md-title"><span translate="nui.mainmenu.description.hoursToday"></span>: {{ library.hours }}</span>
             <span ng-if="!library.hours" class="md-title">
-                <md-button ng-href="{{ library.hours_all.url }}">Click here for hours<prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new" aria-hidden="true"></prm-icon>
+                <md-button rel="nofollow" ng-href="{{ library.hours_all.url }}">Click here for hours<prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new" aria-hidden="true"></prm-icon>
                 </md-button>
             </span>
         </md-card-title-text>
@@ -13,12 +13,12 @@
     <md-card-content>
         <md-list>
             <md-list-item>
-                <p ng-if="library.email"><span translate="nui.contact.email"></span> <md-button ng-href="mailto:{{library.email }}">{{ library.email }}&nbsp;<prm-icon icon-type="svg" svg-icon-set="communication" icon-definition="ic_email_24px"></prm-icon>
+                <p ng-if="library.email"><span translate="nui.contact.email"></span> <md-button rel="nofollow" ng-href="mailto:{{library.email }}">{{ library.email }}&nbsp;<prm-icon icon-type="svg" svg-icon-set="communication" icon-definition="ic_email_24px"></prm-icon>
                     </md-button>
                 </p>
             </md-list-item>
             <md-list-item>
-                <p ng-if="library.phone"><span translate="nui.contact.phone"></span> <md-button ng-href="tel:{{library.phone }}">{{ library.phone }}&nbsp;<prm-icon icon-type="svg" svg-icon-set="communication" icon-definition="ic_phone_24px"></prm-icon>
+                <p ng-if="library.phone"><span translate="nui.contact.phone"></span> <md-button rel="nofollow" ng-href="tel:{{library.phone }}">{{ library.phone }}&nbsp;<prm-icon icon-type="svg" svg-icon-set="communication" icon-definition="ic_phone_24px"></prm-icon>
                     </md-button>
                 </p>
             </md-list-item>
@@ -26,8 +26,8 @@
     </md-card-content>
     <md-card-actions ng-if="library.links" layout="row" layout-xs="column" layout-align="start center" layout-align-xs="center center">
         <div ng-repeat="link in library.links">
-            <md-button target="_blank" ng-href="{{ link.url }}">{{ link.name }}
-                <prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new" aria-hidden="true"></prm-icon>
+            <md-button rel="noopener" target="_blank" ng-href="{{ link.url }}">{{ link.name }}
+                <prm-icon external-link icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new" aria-hidden="true"></prm-icon>
             </md-button>
         </div>
     </md-card-actions>

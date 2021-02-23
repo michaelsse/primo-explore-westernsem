@@ -54,8 +54,19 @@ div.md-list-item-text.prm-help {
   color: #127781;
 }
 
-.md-button.button-confirm, .service-form-static-panel button.button-confirm prm-icon + span, .service-form-static-panel button.button-confirm prm-icon svg path {
+.md-button.button-confirm, a.item-title, .service-form-static-panel button.button-confirm prm-icon + span, .service-form-static-panel button.button-confirm prm-icon svg path {
   color: #0f7d00;
+}
+
+prm-alma-viewit-items md-list {
+  box-shadow: 2px 5px 0 0 rgba(195,195,195,.03),0 5px 5px -3px rgba(195,195,195,.7);
+  border: 1px solid #c3c3c3;
+  padding: unset;
+  margin: 8px 0;
+}
+
+prm-alma-viewit-items md-list a.item-title:hover {
+  font-weight:bold;
 }
 
 span.best-location-library-code.locations-link {
@@ -154,7 +165,15 @@ prm-search-bar,prm-atoz-search-bar,prm-browse-search-bar,prm-tags-search-bar,div
   background-position: left 25%;
   background-image: url(../img/CookLibraryHeader.jpg);
   background-attachment: scroll;
-   background-size: cover;
+  background-size: cover;
+}
+
+prm-newspapers-search-bar {
+  background-repeat: no-repeat;
+  background-position: left 50%;
+  background-image: url(../img/InkStainedWretches.jpg);
+  background-attachment: scroll;
+  background-size: cover;
 }
 
 prm-no-search-result > md-card.default-card {

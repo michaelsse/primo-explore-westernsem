@@ -2,7 +2,7 @@
 	<div class="row" layout="row" layout-xs="column" layout-align="start start" layout-align-xs="center center">
 		<div class="col-sm-2" flex="100" flex-gt-sm="20">
 			<section>
-				<a ng-href="{{library}}" class="aligncenter" target="_blank">
+				<a ng-href="{{library}}" rel="noopener" class="aligncenter" target="_blank">
 					<img id="logof" ng-src="/discovery/{{vidPath}}/img/logof.svg" alt="Cook Library Logo" width="169" height="52">
 					<span class="image-overlay overlay-type-extern">
 						<span class="image-overlay-inside"></span>
@@ -12,7 +12,7 @@
 			<section style="margin-top:1.2em">
 				<div class="textwidget">
 					<p style="text-align:center;">
-					<a href="https://westernsem.libwizard.com/f/contact" target="_blank" style="font-size:13px;" rel="noopener noreferrer">Contact Us</a>
+					<a href="https://westernsem.libwizard.com/f/contact" target="_blank" style="font-size:13px;" rel="noopener">Contact Us</a>
 						<br>Toll-free: <a href="tel:8003928554" target="_blank" rel="noopener noreferrer">800.392.8554</a>
 					</p>
 				</div>
@@ -23,11 +23,11 @@
 				<h3>Discover</h3>
 				<div class="menu-discover-container">
 					<ul>
-						<li><a target="_blank" ng-href="{{library}}">Cook Library</a></li>
-						<li><a target="_blank" href="https://repository.westernsem.edu/xmlui/">Cook Library Digital Archive</a></li>
-						<li><a target="_blank" href="https://hope.edu/library/">Van Wylen Library</a></li>
-						<li><a target="_blank" href="https://herrickdl.org/">Herrick District Library</a></li>
-						<li><a target="_blank" href="http://holland.org">Explore Holland</a></li>
+						<li><a target="_blank" rel="noopener" ng-href="{{library}}">Cook Library</a></li>
+						<li><a target="_blank" rel="noopener" href="https://repository.westernsem.edu/xmlui/">Cook Library Digital Archive</a></li>
+						<li><a target="_blank" rel="noopener" href="https://hope.edu/library/">Van Wylen Library</a></li>
+						<li><a target="_blank" rel="noopener" href="https://herrickdl.org/">Herrick District Library</a></li>
+						<li><a target="_blank" rel="noopener" href="http://holland.org">Explore Holland</a></li>
 					</ul>
 				</div><span class="seperator extralight-border"></span>
 			</section>
@@ -37,9 +37,9 @@
 				<h3>Engage</h3>
 				<div class="menu-engage-container">
 					<ul>
-						<li><a target="_blank" ng-href="{{institution}}/about/worship/">Worship</a></li>
-						<li><a target="_blank" ng-href="{{institution}}/give/">Give</a></li>
-						<li><a target="_blank" ng-href="{{institution}}/community/">Community</a></li>
+						<li><a target="_blank" rel="noopener" ng-href="{{institution}}/about/worship/">Worship</a></li>
+						<li><a target="_blank" rel="noopener" ng-href="{{institution}}/give/">Give</a></li>
+						<li><a target="_blank" rel="noopener" ng-href="{{institution}}/community/">Community</a></li>
 					</ul>
 				</div><span class="seperator extralight-border"></span>
 			</section>
@@ -51,18 +51,18 @@
 					<ul>
 						<li>
 							<span ng-controller="libCalApptDialogComponentController" id="popupContainer2" ng-cloak>
-								<a ng-href="#" ng-click="showCalendar($event)">Schedule Reference Help</a>
+								<a ng-href="#" rel="noopener" ng-click="showCalendar($event)">Schedule Reference Help</a>
 							</span>
 						</li>
 						<li>
 							<span ng-controller="libCalBookingDialogComponentController" id="libCalBookingDialog2" ng-cloak>
-								<a ng-href="#" ng-click="showBooking($event)">Reserve a Library Space</a>
+								<a ng-href="#" rel="noopener" ng-click="showBooking($event)">Reserve a Library Space</a>
 							</span>
 						</li>
-						<li><a target="_blank" ng-href="{{institution}}/academics/registrar/">Academic Calendar</a></li>
-						<li><a target="_blank" ng-href="{{institution}}/title-ix-resources/">Title IX Resources</a></li>
-						<li><a target="_blank" ng-href="{{institution}}/privacy-policy/">Privacy Policy</a></li>
-						<li><a target="_blank" ng-href="{{institution}}/emergency-procedures/">Emergency Procedures</a></li>
+						<li><a target="_blank" rel="noopener" ng-href="{{institution}}/academics/registrar/">Academic Calendar</a></li>
+						<li><a target="_blank" rel="noopener" ng-href="{{institution}}/title-ix-resources/">Title IX Resources</a></li>
+						<li><a target="_blank" rel="noopener" ng-href="{{institution}}/privacy-policy/">Privacy Policy</a></li>
+						<li><a target="_blank" rel="noopener" ng-href="{{institution}}/emergency-procedures/">Emergency Procedures</a></li>
 					</ul>
 				</div><span class="seperator extralight-border"></span>
 			</section>
@@ -72,33 +72,33 @@
 				<h3>Get Connected</h3>
 				<ul layout="row"  flex="20" flex-gt-sm="100">
 					<li>
-						<a href="https://www.facebook.com/wtscook" target="_blank">
+						<a rel="noopener" href="https://www.facebook.com/wtscook" target="_blank">
 							<span class="accessible-only sr-only">Facebook</span>
 							<prm-icon icon-type="svg" svg-icon-set="social" icon-definition="ic_facebook_24px" style="color:#7f7f7f"></prm-icon>
 							<i class="fa fa-facebook-square" aria-hidden="true"></i>
 						</a>
 					</li>
 					<li>
-						<a href="https://twitter.com/wtscook" target="_blank">
+						<a rel="noopener" href="https://twitter.com/wtscook" target="_blank">
 							<span class="accessible-only sr-only">Twitter</span>
 							<prm-icon icon-type="svg" svg-icon-set="social" icon-definition="ic_twitter_24px" style="color:#7f7f7f"></prm-icon>
 							<i class="fa fa-twitter" aria-hidden="true"></i>
 						</a>
 					</li>
 					<!--li>
-						<a href="https://www.instagram.com/westerntheologicalseminary/" target="_blank">
+						<a rel="noopener" href="https://www.instagram.com/westerntheologicalseminary/" target="_blank">
 							<span class="accessible-only sr-only">Instagram</span>
 							<prm-icon icon-type="svg" svg-icon-set="social" icon-definition="ic_instagram_24px" style="color:#7f7f7f"></prm-icon>
 						</a>
 					</li>
 					<li>
-						<a href="https://vimeo.com/user35070381" target="_blank">
+						<a rel="noopener" href="https://vimeo.com/user35070381" target="_blank">
 							<span class="accessible-only sr-only">Vimeo</span>
 							<prm-icon icon-type="svg" svg-icon-set="social" icon-definition="ic_vimeo_24px" style="color:#7f7f7f"></prm-icon>
 						</a>
 					</li-->
 					<li>
-						<a href="https://www.youtube.com/channel/UCiDb-t4knvltHsmN6oBaw8A/featured" target="_blank">
+						<a rel="noopener" href="https://www.youtube.com/channel/UCiDb-t4knvltHsmN6oBaw8A/featured" target="_blank">
 							<span class="accessible-only sr-only">YouTube</span>
 							<md-icon class="md-primoExplore-theme" role="presentation" aria-hidden="true">
 								<svg width="24" height="100%" version="1.1" viewBox="0 0 71.412065 50" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" fit="" preserveAspectRatio="xMidYMid meet" focusable="false"><g transform="scale(.58824)"><path class="st0" d="m118.9 13.3c-1.4-5.2-5.5-9.3-10.7-10.7-9.5-2.6-47.5-2.6-47.5-2.6s-38 0-47.5 2.5c-5.1 1.4-9.3 5.6-10.7 10.8-2.5 9.5-2.5 29.2-2.5 29.2s0 19.8 2.5 29.2c1.4 5.2 5.5 9.3 10.7 10.7 9.6 2.6 47.5 2.6 47.5 2.6s38 0 47.5-2.5c5.2-1.4 9.3-5.5 10.7-10.7 2.5-9.5 2.5-29.2 2.5-29.2s0.1-19.8-2.5-29.3z" fill="#7f7f7f"/><polygon class="st1" points="80.2 42.5 48.6 24.3 48.6 60.7" fill="#fff"/></g></svg>
@@ -109,7 +109,7 @@
 			</section>
 			<section id="custom_html-2">
 				<div class="textwidget custom-html-widget">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2070.4827088295997!2d-86.1038777988169!3d42.78613584680031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8819f2a519290a71%3A0x6f2932d647053096!2sCook%20Library!5e0!3m2!1sen!2sus!4v1601047326799!5m2!1sen!2sus" width="100%" loading="lazy" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+					<iframe title="Google Map of Cook Library/WTS" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2070.4827088295997!2d-86.1038777988169!3d42.78613584680031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8819f2a519290a71%3A0x6f2932d647053096!2sCook%20Library!5e0!3m2!1sen!2sus!4v1601047326799!5m2!1sen!2sus" width="100%" sandbox="allow-scripts allow-popups" loading="lazy" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 				</div><span class="seperator extralight-border"></span>
 			</section>
 		</div>
@@ -118,7 +118,7 @@
 <prm-explore-libchat>
 	<div id="libraryh3lp-chat" class="libraryh3lp_slide_out libraryh3lp_slide_out-r" ng-class="{true: 'open', false: ''}[libchat]">
 		<header>
-			<a role="button" ng-click="libchat=!libchat">Library Chat</a>
+			<a rel="noopener" role="button" ng-click="libchat=!libchat">Library Chat</a>
 		</header>
 		<div class="needs-js" id="library3help">Chat loading &hellip;</div>
 	</div>

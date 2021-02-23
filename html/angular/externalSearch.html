@@ -5,7 +5,7 @@
                 <div ng-repeat="target in targets" aria-live="polite" class="md-chip animate-opacity-and-scale facet-element-marker-local4">
                     <div class="md-chip-content layout-row" role="button" tabindex="0">
                         <strong class="facet-title" dir="auto" title="{{ target.name }}">
-                            <a class="text-number-space" ng-href="{{ target.url + target.mapping(queries, filters) }}" target="{{ target.target }}">
+                            <a class="text-number-space" rel="noopener" ng-href="{{ target.url + target.mapping(queries, filters) }}" target="{{ target.target }}">
                                 <img ng-src="{{ target.img }}" width="16" height="16" class="logo-external-search" alt="{{ target.name }} Logo" style="vertical-align:middle;"> {{ target.name }}
                             </a>
                         </strong>

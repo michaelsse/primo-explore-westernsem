@@ -1,7 +1,7 @@
 <prm-qrcode-container parent-ctrl="$ctrl"></prm-qrcode-container>
 <div ng-if="show" class="bar filter-bar layout-align-center-center layout-row margin-top-medium" layout="row" layout-align="center center">
     <span class="margin-right-small" translate="fulldisplay.command.notright">{{ message }}</span>
-	<md-button class="md-primary" ng-href="{{ link }}" target="_blank">
+	<md-button rel="noopener" class="md-primary" ng-href="{{ link }}" target="_blank">
 		<span style="text-transform: none;" translate="fulldisplay.command.notrightbutton">{{ button }}</span>
 			<prm-icon icon-type="svg" translate-attr-title="fulldisplay.command.notrightbutton" svg-icon-set="primo-ui" icon-definition="open-in-new" aria-hidden="true"></prm-icon>
 			<div class="md-ripple-container"></div>

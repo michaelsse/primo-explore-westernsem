@@ -25,7 +25,7 @@
                                 <div ng-if="bibcard.wikidata_entity.notable_works && bibcard.wikidata_entity.notable_works.length>0">
                                     <span class="md-subhead" translate="custom.authorCard.notableWorks"></span>
                                     <ul>
-                                        <li ng-repeat="work in bibcard.wikidata_entity.notable_works"><a ng-href="{{$ctrl.searchUrl + '&query=title,exact,' + (work | escape)}}" target="_blank">{{work}}</a></li>
+                                        <li ng-repeat="work in bibcard.wikidata_entity.notable_works"><a rel="noopener noreferrer" ng-href="{{$ctrl.searchUrl + '&query=title,exact,' + (work | escape)}}" target="_blank">{{work}}</a></li>
                                     </ul>
                                 </div>
                             </md-card-content>

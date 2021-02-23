@@ -1,0 +1,19 @@
+<div class="spaced-rows" ng-if="isbn">
+    <!---->
+    <!---->
+    <div>
+        <a class="arrow-link md-primoExplore-theme" rel="noopener noreferrer" target="_blank" ng-href="https://www.amazon.com/s?k=isbn%3A{{ isbn }}&linkCode=ogi&psc=1&tag=westtheosemis-20&th=1">
+            <span translate="fulldisplay.amazonlink"></span>
+            <prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new" aria-hidden="true"></prm-icon>
+            <prm-icon link-arrow="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="chevron-right" aria-hidden="true" [display-mode]="::$ctrl.displayMode"></prm-icon>
+        </a>
+    </div>
+    <div>
+        <a class="arrow-link md-primoExplore-theme" rel="noopener noreferrer" target="_blank" ng-href="https://www.betterworldbooks.com/search/results?q={{ isbn }}">
+            <span translate="fulldisplay.betterworld"></span>
+            <prm-icon external-link="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="open-in-new" aria-hidden="true"></prm-icon>
+            <prm-icon link-arrow="" icon-type="svg" svg-icon-set="primo-ui" icon-definition="chevron-right" aria-hidden="true" [display-mode]="::$ctrl.displayMode"></prm-icon>
+        </a>
+    </div>
+    <!---->
+</div>

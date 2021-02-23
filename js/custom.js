@@ -2,7 +2,7 @@
     //"use strict";
     'use strict';
 
-    var app = angular.module('viewCustom', ['angularLoad', 'hathiTrustAvailability', 'matomoAnalytics', 'customActions', 'externalSearch', 'reportProblem', 'bulibUnpaywall', 'loginBackgrounds', 'worldCatSearch', 'googleBooksDesc', 'wts-publisher-link', 'libraryHUD', 'angular-cookie-law', 'lodAuthorCard', 'libCalApptDialog', 'libCalBookingDialog'])
+    var app = angular.module('viewCustom', ['angularLoad', 'hathiTrustAvailability', 'customActions', 'externalSearch', 'reportProblem', 'bulibUnpaywall', 'loginBackgrounds', 'worldCatSearch', 'googleBooksDesc', 'wtsPublisherLink', 'libraryHUD', 'angularCookieLaw', 'lodAuthorCard', 'libCalApptDialog', 'libCalBookingDialog'])
         .component('prmSearchResultAvailabilityLineAfter', {
             template: '<hathi-trust-availability></hathi-trust-availability><prm-search-result-availability-line-after-2></prm-search-result-availability-line-after-2>'
         });
@@ -11,12 +11,12 @@
     app.vid = "01COL_WTS:WTS";
     app.vidPath = 'custom/' + app.vid.toString().replace(":", "-");
 
-	app.robotsMeta = angular.element(document.getElementsByName('robots'))[0];
-	app.sharedCustomerFavIcon = angular.element(document.getElementById('sharedCustomerFavIcon'))[0];
+    app.robotsMeta = angular.element(document.getElementsByName('robots'))[0];
+    app.sharedCustomerFavIcon = angular.element(document.getElementById('sharedCustomerFavIcon'))[0];
     app.viewHomeScreenCustomerIconAndroid = angular.element(document.getElementById('viewHomeScreenCustomerIconAndroid'))[0];
     app.viewHomeScreenCustomerIconIos = angular.element(document.getElementById('viewHomeScreenCustomerIconIos'))[0];
-	app.robotsMeta.content = 'nofollow, noarchive';
-	app.sharedCustomerFavIcon.href = app.vidPath + '/img/icon/apple-touch-icon-152x152-precomposed.png';
+    app.robotsMeta.content = 'nofollow, noarchive';
+    app.sharedCustomerFavIcon.href = app.vidPath + '/img/icon/apple-touch-icon-152x152-precomposed.png';
     app.viewHomeScreenCustomerIconAndroid.href = app.vidPath + '/img/icon/android-chrome-192x192.png';
     app.viewHomeScreenCustomerIconIos.href = app.vidPath + '/img/icon/apple-touch-icon.png';
 
@@ -38,31 +38,36 @@
 			<meta content="us" name="geo.country" />\
 			<meta content="US-MI" name="geo.region" />\
 			<meta content="Holland" name="geo.placename" />\
-			<link href="https://api.altmetric.com" rel="dns-prefetch" />\
-			<link href="https://api.oadoi.org" rel="dns-prefetch" />\
-			<link href="https://api.plu.mx" rel="dns-prefetch" />\
-			<link href="https://catalog.hathitrust.org" rel="dns-prefetch" />\
-			<link href="https://cdn.plu.mx" rel="dns-prefetch" />\
-			<link href="https://content.googleapis.com" rel="dns-prefetch" />\
-			<link href="https://lgapi-us.libapps.com" rel="dns-prefetch" />\
-			<link href="https://d1bxh8uas1mnw7.cloudfront.net/" rel="dns-prefetch" />\
-			<link href="https://libraryh3lp.com" rel="dns-prefetch" />\
+			<link rel="search" type="application/opensearchdescription+xml" title="Primo Search" href="' + app.vidPath + '/html/primoSearch.txt"> \
+			<link href="https://api.altmetric.com" rel="preconnect" crossorigin />\
+			<link href="https://api.oadoi.org" rel="preconnect" crossorigin />\
+			<link href="https://api.plu.mx" rel="preconnect" crossorigin />\
+			<link href="https://catalog.hathitrust.org" rel="preconnect" crossorigin />\
+			<link href="https://cdn.plu.mx" rel="preconnect" crossorigin />\
+			<link href="https://content.googleapis.com" rel="preconnect" crossorigin />\
+			<link href="https://d1bxh8uas1mnw7.cloudfront.net/" rel="preconnect" crossorigin />\
+			<link href="https://fonts.googleapis.com" rel="preconnect" crossorigin />\
+			<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />\
+			<link href="https://lgapi-us.libapps.com" rel="preconnect" crossorigin />\
 			<link href="https://libraryh3lp.com" rel="preconnect" crossorigin />\
-			<link href="https://syndetics.com" rel="dns-prefetch" />');
-			
-	app.config(['$compileProvider', function ($compileProvider) {
-		$compileProvider.debugInfoEnabled(false);
-		$compileProvider.commentDirectivesEnabled(false);
-	}]);
+			<link href="https://syndetics.com" rel="preconnect" crossorigin />\
+			<link href="https://maps.googleapis.com" rel="preconnect" crossorigin />\
+			<link href="https://maps.gstatic.com" rel="preconnect" crossorigin />\
+			<link href="https://www.google-analytics.com" rel="preconnect" crossorigin />');
+
+    app.config(['$compileProvider', function($compileProvider) {
+        $compileProvider.debugInfoEnabled(false);
+        $compileProvider.commentDirectivesEnabled(false);
+    }]);
 
     /** Show Scopes **/
     app.component('prmSearchBarAfter', {
         bindings: {
             parentCtrl: '<'
         },
-		require: {
-			prmSearchBarAfter: '^prmSearchBarAfter'
-		},
+        require: {
+            prmSearchBarAfter: '^prmSearchBarAfter'
+        },
         controller: 'SearchBarAfterController',
         /** COVID-19 Announcement **/
         templateUrl: app.vidPath + '/html/angular/SearchBarAfterController.html',
@@ -76,176 +81,196 @@
     /** Show Scopes **/
     /********/
     /** Google Analytics **/
-	var gtag = document.createElement('script');
+    var gtag = document.createElement('script');
     gtag.type = 'text/javascript';
     gtag.async = 'true';
     gtag.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.googletagmanager.com/gtag/js?id=G-61RHNW4G0Y';
-	document.getElementsByTagName('head')[0].appendChild(gtag);
-    
-	var gtagopt = document.createElement('script');
+    document.getElementsByTagName('head')[0].appendChild(gtag);
+
+    var gtagopt = document.createElement('script');
     gtagopt.type = 'text/javascript';
     gtagopt.innerHTML = 'window.dataLayer = window.dataLayer || [];\
 		function gtag(){dataLayer.push(arguments);}\
 		gtag(\'js\', new Date()); \
 		gtag(\'config\', \'G-61RHNW4G0Y\', { \'anonymize_ip\': true });';
-	document.getElementsByTagName('head')[0].appendChild(gtagopt);
+    document.getElementsByTagName('head')[0].appendChild(gtagopt);
     /** Google Analytics **/
-    /********/
-    /** Matomo **/
-    angular.module('matomoAnalytics', []);
-    angular.module('matomoAnalytics').run(function($rootScope, $interval, matomoOptions) {
-        if (matomoOptions.hasOwnProperty("enabled") && matomoOptions.enabled) {
-            if (matomoOptions.hasOwnProperty("siteId") && matomoOptions.siteId !== '' && matomoOptions.hasOwnProperty("siteUrl") && matomoOptions.siteUrl !== '') {
-                if (typeof _paq === 'undefined') {
-                    window['_paq'] = [];
-                    _paq.push(["setDomains", ["*.primo.exlibrisgroup.com/"]]);
-                    _paq.push(["setDoNotTrack", true]);
-                    (function() {
-                        _paq.push(['setTrackerUrl', matomoOptions.siteUrl + 'piwik.php']);
-                        _paq.push(['setSiteId', matomoOptions.siteId]);
-                        var d = document,
-                            g = d.createElement('script'),
-                            s = d.getElementsByTagName('script')[0];
-                        g.type = 'text/javascript';
-                        g.async = true;
-                        g.defer = true;
-                        g.src = matomoOptions.siteUrl + 'piwik.js';
-                        s.parentNode.insertBefore(g, s);
-                    })();
-                }
-            }
-            $rootScope.$on('$locationChangeSuccess', function(event, toState, fromState) {
-                if (matomoOptions.hasOwnProperty("defaultTitle")) {
-                    var documentTitle = matomoOptions.defaultTitle;
-                    var timerStart = Date.now();
-                    var interval = $interval(function() {
-                        if (document.title !== '') documentTitle = document.title;
-                        if (window.location.pathname.indexOf('openurl') !== -1 || window.location.pathname.indexOf('fulldisplay') !== -1)
-                            if (angular.element(document.querySelector('prm-full-view-service-container .item-title>a')).length === 0) return;
-                            else documentTitle = angular.element(document.querySelector('prm-full-view-service-container .item-title>a')).text();
-
-                        if (typeof _paq !== 'undefined') {
-                            if (fromState != toState) _paq.push(['setReferrerUrl', fromState]);
-                            _paq.push(['setCustomUrl', toState]);
-                            _paq.push(['setDocumentTitle', documentTitle]);
-                            _paq.push(['setGenerationTimeMs', Date.now() - timerStart]);
-                            _paq.push(['enableLinkTracking']);
-                            _paq.push(['enableHeartBeatTimer']);
-                            _paq.push(['trackPageView']);
-                        }
-                        $interval.cancel(interval);
-                    }, 0);
-                }
-            });
-        }
-    });
-    angular.module('matomoAnalytics').value('matomoOptions', {
-        enabled: true,
-        siteId: 'wMeV4we4Yx',
-        siteUrl: 'https://repository.westernsem.edu/piwik/',
-        defaultTitle: 'Primo Discovery'
-    });
-    /** Matomo **/
     /********/
     /** HathiTrust Module **/
     //https://github.com/UMNLibraries/primo-explore-hathitrust-availability
-    angular.module('hathiTrustAvailability', [])
-        .constant('hathiTrustBaseUrl', "https://catalog.hathitrust.org/api/volumes/brief/json/")
-        .config(['$sceDelegateProvider', 'hathiTrustBaseUrl', function($sceDelegateProvider, hathiTrustBaseUrl) {
-            var urlWhitelist = $sceDelegateProvider.resourceUrlWhitelist();
-            urlWhitelist.push(hathiTrustBaseUrl + '**');
-            $sceDelegateProvider.resourceUrlWhitelist(urlWhitelist);
-        }])
-        .factory('hathiTrust', ['$http', '$q', function($http, $q) {
-            var svc = {};
-            var hathiTrustBaseUrl = "https://catalog.hathitrust.org/api/volumes/brief/json/";
+    angular
+        .module('hathiTrustAvailability', [])
+        .constant(
+            'hathiTrustBaseUrl',
+            'https://catalog.hathitrust.org/api/volumes/brief/json/'
+        )
+        .config([
+            '$sceDelegateProvider',
+            'hathiTrustBaseUrl',
+            function($sceDelegateProvider, hathiTrustBaseUrl) {
+                var urlWhitelist = $sceDelegateProvider.resourceUrlWhitelist();
+                urlWhitelist.push(hathiTrustBaseUrl + '**');
+                $sceDelegateProvider.resourceUrlWhitelist(urlWhitelist);
+            },
+        ])
+        .factory('hathiTrust', [
+            '$http',
+            '$q',
+            'hathiTrustBaseUrl',
+            function($http, $q, hathiTrustBaseUrl) {
+                var svc = {};
 
-            svc.findFullViewRecord = function(ids) {
-                var deferred = $q.defer();
-
-                var handleResponse = function(resp) {
-                    var data = resp.data;
-                    var fullTextUrl = null;
-                    for (var i = 0; !fullTextUrl && i < ids.length; i++) {
-                        var result = data[ids[i]];
-                        for (var j = 0; j < result.items.length; j++) {
-                            var item = result.items[j];
-                            if (item.usRightsString.toLowerCase() === "full view") {
-                                fullTextUrl = result.records[item.fromRecord].recordURL;
-                                break;
-                            }
-                        }
+                var lookup = function(ids) {
+                    if (ids.length) {
+                        var hathiTrustLookupUrl = hathiTrustBaseUrl + ids.join('|');
+                        return $http
+                            .jsonp(hathiTrustLookupUrl, {
+                                cache: true,
+                                jsonpCallbackParam: 'callback',
+                            })
+                            .then(function(resp) {
+                                return resp.data;
+                            });
+                    } else {
+                        return $q.resolve(null);
                     }
-                    deferred.resolve(fullTextUrl);
                 };
 
-                if (ids.length) {
-                    var hathiTrustLookupUrl = hathiTrustBaseUrl + ids.join('|');
-                    $http.jsonp(hathiTrustLookupUrl, {
-                            cache: true,
-                            jsonpCallbackParam: 'callback'
+                // find a HT record URL for a given list of identifiers (regardless of copyright status)
+                svc.findRecord = function(ids) {
+                    return lookup(ids)
+                        .then(function(bibData) {
+                            for (var i = 0; i < ids.length; i++) {
+                                var recordId = Object.keys(bibData[ids[i]].records)[0];
+                                if (recordId) {
+                                    return $q.resolve(bibData[ids[i]].records[recordId].recordURL);
+                                }
+                            }
+                            return $q.resolve(null);
                         })
+                        .catch(function(e) {
+                            console.error(e);
+                        });
+                };
+
+                // find a public-domain HT record URL for a given list of identifiers
+                svc.findFullViewRecord = function(ids) {
+                    var handleResponse = function(bibData) {
+                        var fullTextUrl = null;
+                        for (var i = 0; !fullTextUrl && i < ids.length; i++) {
+                            var result = bibData[ids[i]];
+                            for (var j = 0; j < result.items.length; j++) {
+                                var item = result.items[j];
+                                if (item.usRightsString.toLowerCase() === 'full view') {
+                                    fullTextUrl = result.records[item.fromRecord].recordURL;
+                                    break;
+                                }
+                            }
+                        }
+                        return $q.resolve(fullTextUrl);
+                    };
+                    return lookup(ids)
                         .then(handleResponse)
                         .catch(function(e) {
-                            console.log(e);
+                            console.error(e);
                         });
-                } else {
-                    deferred.resolve(null);
-                }
+                };
 
-                return deferred.promise;
-            };
+                return svc;
+            },
+        ])
+        .controller('HathiTrustAvailabilityController', [
+            'hathiTrust',
+            function(hathiTrust) {
+                var self = this;
 
-            return svc;
+                self.$onInit = function() {
+                    if (!self.msg) self.msg = 'Full Text Available at HathiTrust';
 
-        }])
-        .controller('hathiTrustAvailabilityController', ['hathiTrust', function(hathiTrust) {
-            var self = this;
-
-            self.$onInit = function() {
-                setDefaults();
-                if (!(isOnline() && self.hideOnline)) {
-                    updateHathiTrustAvailability();
-                }
-            };
-
-            var setDefaults = function() {
-                if (!self.msg) self.msg = 'Full Text Available at HathiTrust';
-            };
-
-            var isOnline = function() {
-                if (self.prmSearchResultAvailabilityLine.result.delivery.GetIt1) {
-                    return self.prmSearchResultAvailabilityLine.result.delivery.GetIt1.some(function(g) {
-                        return g.links.some(function(l) {
-                            return l.isLinktoOnline;
-                        });
-                    });
-                }
-            };
-
-            var updateHathiTrustAvailability = function() {
-                var hathiTrustIds = (self.prmSearchResultAvailabilityLine.result.pnx.addata.oclcid || []).map(function(id) {
-                    if (self.prmSearchResultAvailabilityLine.result.pnx.control.sourcesystem == 'ILS' || self.prmSearchResultAvailabilityLine.result.pnx.control.sourcesystem == 'ALMA' || self.prmSearchResultAvailabilityLine.result.pnx.control.sourcesystem == 'WorldCat' || self.prmSearchResultAvailabilityLine.result.pnx.control.sourcesystem == 'OCLC' || self.prmSearchResultAvailabilityLine.result.pnx.control.sourcesystem == 'OCLC Partners') {
-                        return "oclc:" + id.replace(/\(/g, '').replace(/\)/g, '');
+                    // prevent appearance/request iff 'hide-online'
+                    if (self.hideOnline && isOnline()) {
+                        return;
                     }
-                });
-                hathiTrust.findFullViewRecord(hathiTrustIds).then(function(res) {
-                    self.fullTextLink = res;
-                });
-            };
 
-        }])
+                    // prevent appearance/request iff 'hide-if-journal'
+                    if (self.hideIfJournal && isJournal()) {
+                        return;
+                    }
+
+                    // prevent appearance/request if item is unavailable
+                    if (self.ignoreCopyright && !isAvailable()) {
+                        //allow links for locally unavailable items that are in the public domain
+                        self.ignoreCopyright = false;
+                    }
+
+                    // look for full text at HathiTrust
+                    updateHathiTrustAvailability();
+                };
+
+                var isJournal = function() {
+                    var format =
+                        self.prmSearchResultAvailabilityLine.result.pnx.addata.format[0];
+                    return !(format.toLowerCase().indexOf('journal') == -1); // format.includes("Journal")
+                };
+
+                var isAvailable = function isAvailable() {
+                    var available = self.prmSearchResultAvailabilityLine.result.delivery.availability[0];
+                    return (available.toLowerCase().indexOf('unavailable') == -1);
+                };
+
+                var isOnline = function() {
+                    var delivery =
+                        self.prmSearchResultAvailabilityLine.result.delivery || [];
+                    if (!delivery.GetIt1)
+                        return delivery.deliveryCategory.indexOf('Alma-E') !== -1;
+                    return self.prmSearchResultAvailabilityLine.result.delivery.GetIt1.some(
+                        function(g) {
+                            return g.links.some(function(l) {
+                                return l.isLinktoOnline;
+                            });
+                        }
+                    );
+                };
+
+                var formatLink = function(link) {
+                    return self.entityId ? link + '?signon=swle:' + self.entityId : link;
+                };
+
+                var isOclcNum = function(value) {
+                    return value.match(/^(\(ocolc\))?\d+$/i);
+                };
+
+                var updateHathiTrustAvailability = function() {
+                    var hathiTrustIds = (
+                            self.prmSearchResultAvailabilityLine.result.pnx.addata.oclcid || []
+                        )
+                        .filter(isOclcNum)
+                        .map(function(id) {
+                            return 'oclc:' + id.toLowerCase().replace('(ocolc)', '');
+                        });
+                    hathiTrust[self.ignoreCopyright ? 'findRecord' : 'findFullViewRecord'](
+                        hathiTrustIds
+                    ).then(function(res) {
+                        if (res) self.fullTextLink = formatLink(res);
+                    });
+                };
+            },
+        ])
         .component('hathiTrustAvailability', {
             require: {
-                prmSearchResultAvailabilityLine: '^prmSearchResultAvailabilityLine'
+                prmSearchResultAvailabilityLine: '^prmSearchResultAvailabilityLine',
             },
             bindings: {
+                entityId: '@',
+                ignoreCopyright: '<',
+                hideIfJournal: '<',
                 hideOnline: '<',
-                msg: '@?'
+                msg: '@?',
             },
-            controller: 'hathiTrustAvailabilityController',
+            controller: 'HathiTrustAvailabilityController',
             templateUrl: app.vidPath + '/html/angular/hathiTrustAvailabilityController.html'
         });
+
     /** HathiTrust Module **/
     /********/
     /** No Results Page **/
@@ -258,25 +283,26 @@
         bindings: {
             parentCtrl: '<'
         },
-		require: {
-			prmNoSearchResultAfter: '^prmNoSearchResultAfter'
-		},
+        require: {
+            prmNoSearchResultAfter: '^prmNoSearchResultAfter'
+        },
         controller: 'NoSearchResultAfterController',
         templateUrl: app.vidPath + '/html/angular/prmNoSearchResultAfter.html'
     });
 
-    app.controller('primoExploreCustomNoResultsController', ['$location', function($location) {
+    app.controller('PrimoExploreCustomNoResultsController', ['$location', function($location) {
         var vm = this;
-		vm.getQuery = $location.search().query;
+        vm.getQuery = $location.search().query;
         vm.getSearchTerm = getSearchTerm;
         vm.pciSetting = vm.parentCtrl.searchStateService.searchObject.pcAvailability || '';
+
         function getSearchTerm() {
             return vm.parentCtrl.term;
         }
     }]);
 
     // Enhance No Results tile
-    app.controller('prmNoSearchResultAfterController', [function() {
+    app.controller('PrmNoSearchResultAfterController', [function() {
         var vm = this;
         vm.getSearchTerm = getSearchTerm;
         vm.pciSetting = vm.parentCtrl.searchStateService.searchObject.pcAvailability || '';
@@ -290,10 +316,10 @@
         bindings: {
             parentCtrl: '<'
         },
-		require: {
-			primoExploreCustomNoResults: '^primoExploreCustomNoResults'
-		},
-        controller: 'primoExploreCustomNoResultsController',
+        require: {
+            primoExploreCustomNoResults: '^primoExploreCustomNoResults'
+        },
+        controller: 'PrimoExploreCustomNoResultsController',
         templateUrl: app.vidPath + '/html/help/noResults.html'
     });
     /** No Results Page **/
@@ -413,7 +439,7 @@
             parentCtrl: '<'
         },
         controller: 'FullViewAfterController',
-		templateUrl: app.vidPath + '/html/angular/prmFullViewAfter.html'
+        templateUrl: app.vidPath + '/html/angular/prmFullViewAfter.html'
     });
 
     //Auto generated code by primo app store DO NOT DELETE!!! -END-
@@ -769,7 +795,7 @@
              */
 
             var plumxTemplate = '<div id="plumx_widget" ng-if="$ctrl.doi"> \
-			<a ng-href="{{$ctrl.plumx_url}}" \
+			<a rel="nofollow noopener" ng-href="{{$ctrl.plumx_url}}" \
 			class="{{$ctrl.plumx_class}}" \
 			data-size="large" \
 			data-popup="{{$ctrl.plumx_popup}}" \
@@ -925,7 +951,7 @@
                         if (vm.doi) {
                             vm.$timeout(function() {
                                 vm.plumx_url = 'https://plu.mx/plum/a/?' + vm.api + '=' + vm.doi;
-                                vm.$http.head('https://cors-anywhere.herokuapp.com/' + vm.plumx_url).then(function(_res) {
+                                vm.$http.head('https://lucky-water-2bd8.westernsem.workers.dev/?' + vm.plumx_url).then(function(_res) {
                                     // Get the PlumX script
                                     if (_res.status !== 404) {
                                         console.log('PlumX Status:' + _res.status);
@@ -1177,14 +1203,14 @@
         bindings: {
             parentCtrl: '<'
         },
-		require: {
-			prmExploreFooterAfter: '^prmExploreFooterAfter'
-		},
-        controller: 'prmExploreFooterAfterController',
+        require: {
+            prmExploreFooterAfter: '^prmExploreFooterAfter'
+        },
+        controller: 'PrmExploreFooterAfterController',
         templateUrl: app.vidPath + '/html/homepage/footer_en.html',
     });
 
-    app.controller('prmExploreFooterAfterController', ['angularLoad', '$http', '$scope', (function(angularLoad, $http, $scope) {
+    app.controller('PrmExploreFooterAfterController', ['angularLoad', '$http', '$scope', (function(angularLoad, $http, $scope) {
         var lc = document.createElement('script');
         lc.type = 'text/javascript';
         lc.async = 'true';
@@ -1192,11 +1218,11 @@
         lc.setAttribute('crossorigin', 'anonymous');
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(lc, s);
-		
-		$scope.vidPath = app.vidPath;
-		$scope.institution = "https://www.westernsem.edu";
-		$scope.library = "https://guides.westernsem.edu";
-		$scope.libcal = "https://westernsem.libcal.com";
+
+        $scope.vidPath = app.vidPath;
+        $scope.institution = "https://www.westernsem.edu";
+        $scope.library = "https://guides.westernsem.edu";
+        $scope.libcal = "https://westernsem.libcal.com";
     })]);
     // End the chat button 
     /** Libraryh3lp Chat widget	**/
@@ -1218,7 +1244,7 @@
         });
 
     angular.module('bulibUnpaywall', [])
-        .controller('unpaywallController', ['$http', '$injector', function($http, $injector) {
+        .controller('UnpaywallController', ['$http', '$injector', function($http, $injector) {
             var self = this; // 'this' changes scope inside of the $http.get(). 'self' is easier to track/trace
 
             var LOG_CONFIG_DISCOVERY = false;
@@ -1335,7 +1361,7 @@
                     }
 
                 } catch (e) {
-                    self.logMessageToConsole("error caught in unpaywallController: " + e.message);
+                    self.logMessageToConsole("error caught in UnpaywallController: " + e.message);
                 }
             };
 
@@ -1345,7 +1371,7 @@
                 prmSearchResultAvailabilityLine: '^prmSearchResultAvailabilityLine'
             },
             templateUrl: app.vidPath + '/html/angular/bulibUnpaywall.html',
-            controller: 'unpaywallController'
+            controller: 'UnpaywallController'
         });
     /** Open Access Button Module **/
     /********/
@@ -1389,7 +1415,9 @@
             'background-05.jpg',
             'background-06.jpg',
             'background-07.jpg',
-			'background-08.jpg'
+            'background-08.jpg',
+            'background-09.jpg'
+
         ])
         .factory('loginBackgrounds', ['$document', '$stateParams', 'loginImages', function($document, $stateParams, loginImages) {
             return {
@@ -1422,12 +1450,12 @@
         .component('prmLoginAfter', {
             controller: ['loginBackgrounds', function(loginBackgrounds) {
                 this.$onInit = function() {
-					loginBackgrounds.setBackground();
-					var googleLink = document.querySelectorAll('h3[translate="parallel.login.link1"]');
-					console.log (googleLink);
-					var googleLinkNew = '<img src="' + app.vidPath + '/img/login/btn_google_signin_light_normal_web@2x.png" alt="Sign in with Google"/>';
-					console.log (googleLinkNew);
-					googleLink.innerHTML = googleLinkNew;
+                    loginBackgrounds.setBackground();
+                    var googleLink = document.querySelectorAll('h3[translate="parallel.login.link1"]');
+                    console.log(googleLink);
+                    var googleLinkNew = '<img src="' + app.vidPath + '/img/login/btn_google_signin_light_normal_web@2x.png" alt="Sign in with Google"/>';
+                    console.log(googleLinkNew);
+                    googleLink.innerHTML = googleLinkNew;
                 };
                 this.$onDestroy = function() {
                     loginBackgrounds.clearBackground();
@@ -1532,8 +1560,8 @@
     /********/
     /** Add Publisher Link from PNX **/
     // https://github.com/BCLibraries/primo-explore-publisher-link 
-    angular.module('wts-publisher-link', [])
-        .controller('almaHtgiSvcAfterController', ['$scope', function($scope) {
+    angular.module('wtsPublisherLink', [])
+        .controller('AlmaHtgiSvcAfterController', ['$scope', function($scope) {
             var vm = this;
 
             try {
@@ -1553,8 +1581,8 @@
             } catch (e) {
                 vm.sourceInfo = 'Link to resource';
             }
-			
-			vm.recordtype = vm.parentCtrl.item.pnx.control.recordtype[0] || '';
+
+            vm.recordtype = vm.parentCtrl.item.pnx.control.recordtype[0] || '';
 
             if (vm.url && vm.oa) {
                 vm.publisherLink = vm.url;
@@ -1569,7 +1597,7 @@
             bindings: {
                 parentCtrl: '<'
             },
-            controller: 'almaHtgiSvcAfterController',
+            controller: 'AlmaHtgiSvcAfterController',
             templateUrl: app.vidPath + '/html/angular/wtsPublisherLink.html',
         });
     /** Add Publisher Link from PNX **/
@@ -1621,7 +1649,7 @@
         //img: //app.vidPath + '/img/login/' + 'background-01.jpg',
         hours_link: {
             'type': 'gcal',
-            'url': 'https://content.googleapis.com/calendar/v3/calendars/westernsem.edu_747qjgic8daafbdlec3cl0m11s@group.calendar.google.com/events?maxResults=15&orderBy=startTime&showDeleted=false&singleEvents=true&timeMin=' + new Date().toISOString() + '&minAccessRole=reader&key='
+            'url': 'https://content.googleapis.com/calendar/v3/calendars/westernsem.edu_747qjgic8daafbdlec3cl0m11s@group.calendar.google.com/events?maxResults=15&orderBy=startTime&showDeleted=false&singleEvents=true&timeMin=' + new Date().toISOString() + '&minAccessRole=reader&key=AIzaSyA6c5P5E3wKYSvsqZxW9Y19RAw7u-AgteI'
         },
         hours_all: {
             'type': '',
@@ -1653,13 +1681,13 @@
         bindings: {
             parentCtrl: '<'
         },
-		require: {
-			prmSearchBookmarkFilterAfter: '^prmSearchBookmarkFilterAfter'
-		},
-        controller: 'wtsCookHelp'
+        require: {
+            prmSearchBookmarkFilterAfter: '^prmSearchBookmarkFilterAfter'
+        },
+        controller: 'WtsCookHelpController'
     });
 
-    app.controller('wtsCookHelp', ['$scope', '$mdDialog', function($scope, $mdDialog) {
+    app.controller('WtsCookHelpController', ['$scope', '$mdDialog', function($scope, $mdDialog) {
         var vm = this;
 
         vm.showWtsCookHelp = function(event) {
@@ -1685,9 +1713,9 @@
         bindings: {
             parentCtrl: '<'
         },
-		require: {
-			prmTabsAndScopesSelectorAfter: '^prmTabsAndScopesSelectorAfter'
-		},
+        require: {
+            prmTabsAndScopesSelectorAfter: '^prmTabsAndScopesSelectorAfter'
+        },
         controller: function($scope) {
             setInterval(function() {
                 function activateSearch() {
@@ -1737,11 +1765,11 @@
             bindings: {
                 parentCtrl: '<'
             },
-            controller: 'prmLibGuidesAzController' //,
+            controller: 'PrmLibGuidesAzController' //,
             //templateUrl: '//lgapi-us.libapps.com/widgets.php?site_id=1710&widget_type=2&search_terms=&search_match=2&subject_ids=&sort_by=name&list_format=2&drop_text=Select+a+Database...&output_format=1&load_type=2&enable_description=0&widget_embed_type=2&num_results=0&enable_more_results=0&window_target=2&config_id=1587652524664'
         });
 
-    app.controller('prmLibGuidesAzController', ['$scope', function($scope) {
+    app.controller('PrmLibGuidesAzController', ['$scope', function($scope) {
         $scope.springStatsCfg = document.createElement('script');
         $scope.springStatsCfg.innerHTML = 'var springStats = springStats || {}; springStats.saConfig = springStats.saConfig || {site_id: 1710, tracking_parameters: {"_st_site_id":1710}, tracking_server_host: "libguides-proc.springyaws.com"};';
         document.getElementById('s-lg-widget-1587652524664').parentNode.append($scope.springStatsCfg);
@@ -1768,13 +1796,13 @@
     /********/
     /** Angular Cookie Law **/
     //https://github.com/Palmabit-IT/angular-cookie-law
-    angular.module('angular-cookie-law', []);
-    angular.module('angular-cookie-law')
+    angular.module('angularCookieLaw', []);
+    angular.module('angularCookieLaw')
         .value('cookieLawName', '01colwts_cle')
         .value('cookieLawAccepted', 'accepted')
         .value('cookieLawDeclined', 'declined');
 
-    angular.module('angular-cookie-law')
+    angular.module('angularCookieLaw')
         .directive('cookieLawBanner', ['$compile', 'CookieLawService', function($compile, CookieLawService) {
             return {
                 restrict: 'EA',
@@ -1834,18 +1862,16 @@
                         expireDate = expireDate.toGMTString();
 
                         if (options.acceptButton) {
-                            //scope.acceptButton = '<a href="#" class="cl-accept" ng-click="accept()">' + options.acceptText + '</a>';
                             scope.acceptButton = '<md-button ng-href="#" ng-click="accept()">' + options.acceptText + '</md-button>';
                         }
 
                         if (options.declineButton) {
-                            scope.declineButton = ' <a href="" class="cl-disable" ng-click="decline()">' + options.declineText + '</a>';
+                            scope.declineButton = ' <a rel="nofollow" href="" class="cl-disable" ng-click="decline()">' + options.declineText + '</a>';
                         }
 
                         if (options.policyButton) {
                             scope.policyButton =
-                                //' <a href="' + options.policyURL + '" class="cl-policy" target="_blank">' + options.policyText + '</a>';
-                                ' <md-button ng-href="' + options.policyURL + '" target="_blank">' + options.policyText + '</md-button>';
+                                ' <md-button rel="nofollow noopener" ng-href="' + options.policyURL + '" target="_blank">' + options.policyText + '</md-button>';
                         }
 
                         /*template =
@@ -1887,7 +1913,7 @@
             }
         }]);
 
-    angular.module('angular-cookie-law')
+    angular.module('angularCookieLaw')
         .directive('cookieLawWait', ['CookieLawService', function(CookieLawService) {
             return {
                 priority: 1,
@@ -1918,7 +1944,7 @@
             };
         }]);
 
-    angular.module('angular-cookie-law')
+    angular.module('angularCookieLaw')
         .factory('CookieLawService', ['CookieService', 'cookieLawName', 'cookieLawAccepted', 'cookieLawDeclined', function(CookieService, cookieLawName, cookieLawAccepted, cookieLawDeclined) {
             var accept = function(expireDate) {
                 CookieService.set(cookieLawName, cookieLawAccepted + ';expires=' + expireDate);
@@ -1949,7 +1975,7 @@
             }
         }]);
 
-    angular.module('angular-cookie-law')
+    angular.module('angularCookieLaw')
         .factory('CookieService', function() {
             var readCookie = function(key) {
                 var nameEQ = key + "=";
@@ -1976,111 +2002,111 @@
             }
         });
     /** Angular Cookie Law **/
-	/** LibCal Appointments **/
-	angular.module('libCalApptDialog', [])
-		.constant('libCalApptDialogBaseUrl', "https://api3.libcal.com/js/")
+    /** LibCal Appointments **/
+    angular.module('libCalApptDialog', [])
+        .constant('libCalApptDialogBaseUrl', "https://api3.libcal.com/js/")
         .config(['$sceDelegateProvider', 'libCalApptDialogBaseUrl', function($sceDelegateProvider, libCalApptDialogBaseUrl) {
             var urlWhitelist = $sceDelegateProvider.resourceUrlWhitelist();
             urlWhitelist.push(libCalApptDialogBaseUrl + '**');
             $sceDelegateProvider.resourceUrlWhitelist(urlWhitelist);
         }])
-		.component('libCalApptDialogComponent', {
+        .component('libCalApptDialogComponent', {
             bindings: {
                 parentCtrl: '<'
             },
             controller: 'libCalApptDialogComponentController',
             templateUrl: app.vidPath + '/html/angular/libCalApptDialog.html'
         })
-		.controller('libCalApptDialogComponentController',['$scope', '$sce', '$mdDialog', function($scope, $sce, $mdDialog) {
-			$scope.status = '  ';
-			$scope.customFullscreen = true;
-			$scope.timeStamp = Date.now();
-			
-			$scope.showCalendar = function (ev) {
-				$mdDialog.show({
-					controller: DialogController,
-					templateUrl: app.vidPath + '/html/angular/libCalApptDialog.html',
-					parent: angular.element(document.body),
-					targetEvent: ev,
-					clickOutsideToClose: true
-				});
-			};
-			
-			function DialogController($scope, $mdDialog) {
-				$scope.hide = function () {
-					$mdDialog.hide();
-					};
+        .controller('libCalApptDialogComponentController', ['$scope', '$sce', '$mdDialog', function($scope, $sce, $mdDialog) {
+            $scope.status = '  ';
+            $scope.customFullscreen = true;
+            $scope.timeStamp = Date.now();
 
-				$scope.cancel = function () {
-					$mdDialog.cancel();
-					};
+            $scope.showCalendar = function(ev) {
+                $mdDialog.show({
+                    controller: DialogController,
+                    templateUrl: app.vidPath + '/html/angular/libCalApptDialog.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true
+                });
+            };
 
-				$scope.answer = function (answer) {
-					$mdDialog.hide(answer);
-					};
-				}
-		}]);
+            function DialogController($scope, $mdDialog) {
+                $scope.hide = function() {
+                    $mdDialog.hide();
+                };
+
+                $scope.cancel = function() {
+                    $mdDialog.cancel();
+                };
+
+                $scope.answer = function(answer) {
+                    $mdDialog.hide(answer);
+                };
+            }
+        }]);
     /** LibCal Appointments **/
     /********/
-	/** LibCal Reservations **/
-	angular.module('libCalBookingDialog', [])
-		.constant('libCalBookingDialogBaseUrl', "https://api3.libcal.com/widget/")
-		.config(['$sceDelegateProvider', 'libCalBookingDialogBaseUrl', function($sceDelegateProvider, libCalBookingDialogBaseUrl) {
+    /** LibCal Reservations **/
+    angular.module('libCalBookingDialog', [])
+        .constant('libCalBookingDialogBaseUrl', "https://api3.libcal.com/widget/")
+        .config(['$sceDelegateProvider', 'libCalBookingDialogBaseUrl', function($sceDelegateProvider, libCalBookingDialogBaseUrl) {
             var urlWhitelist = $sceDelegateProvider.resourceUrlWhitelist();
             urlWhitelist.push(libCalBookingDialogBaseUrl + '**');
             $sceDelegateProvider.resourceUrlWhitelist(urlWhitelist);
         }])
-		.controller('libCalBookingDialogComponentController', ['$scope', '$sce', '$mdDialog', function($scope, $sce, $mdDialog) {
-			$scope.status = '  ';
-			$scope.customFullscreen = true;
-			
-			$scope.showBooking = function (ev) {
-				$mdDialog.show({
-					controller: DialogController,
-					templateUrl: app.vidPath + '/html/angular/libCalBookingDialog.html',
-					parent: angular.element(document.body),
-					targetEvent: ev,
-					clickOutsideToClose: true
-				});
-			};
-			
-			$scope.groupStudy = function(){
-				$scope.iframeSrc = $sce.trustAsResourceUrl('https://api3.libcal.com/widget/equipment?gid=23223&eid=0&iid=5337');
-				$scope.url = 'https://westernsem.libcal.com/reserve/studyRooms';
-			};
-			$scope.privateStudy = function(){
-				$scope.iframeSrc = $sce.trustAsResourceUrl('https://api3.libcal.com/widget/equipment?gid=23272&eid=0&iid=5337');
-				$scope.url = 'https://westernsem.libcal.com/reserve/ubercarrel';				
-			};
-			$scope.worshipResource = function(){
-				$scope.iframeSrc = $sce.trustAsResourceUrl('https://api3.libcal.com/widget/equipment?gid=23242&eid=0&iid=5337');
-				$scope.url = 'https://westernsem.libcal.com/space/87475';
-			};
-			$scope.accessibility = function(){
-				$scope.iframeSrc = $sce.trustAsResourceUrl('https://api3.libcal.com/widget/equipment?gid=23240&eid=0&iid=5337');
-				$scope.url = 'https://westernsem.libcal.com/space/87463';
-			};
-			$scope.locker = function(){
-				$scope.iframeSrc = $sce.trustAsResourceUrl('https://api3.libcal.com/widget/equipment?gid=23301&eid=0&iid=5337');
-				$scope.url = 'https://westernsem.libcal.com/spaces?lid=11695&amp;gid=23301';
-			};
-			
-			function DialogController($scope, $mdDialog) {
-				$scope.hide = function () {
-					$mdDialog.hide();
-					};
+        .controller('libCalBookingDialogComponentController', ['$scope', '$sce', '$mdDialog', function($scope, $sce, $mdDialog) {
+            $scope.status = '  ';
+            $scope.customFullscreen = true;
 
-				$scope.cancel = function () {
-					$mdDialog.cancel();
-					};
+            $scope.showBooking = function(ev) {
+                $mdDialog.show({
+                    controller: DialogController,
+                    templateUrl: app.vidPath + '/html/angular/libCalBookingDialog.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true
+                });
+            };
 
-				$scope.answer = function (answer) {
-					$mdDialog.hide(answer);
-					};
-				}
-			
-		}]);
-	/** LibCal Reservations **/
+            $scope.groupStudy = function() {
+                $scope.iframeSrc = $sce.trustAsResourceUrl('https://api3.libcal.com/widget/equipment?gid=23223&eid=0&iid=5337');
+                $scope.url = 'https://westernsem.libcal.com/reserve/studyRooms';
+            };
+            $scope.privateStudy = function() {
+                $scope.iframeSrc = $sce.trustAsResourceUrl('https://api3.libcal.com/widget/equipment?gid=23272&eid=0&iid=5337');
+                $scope.url = 'https://westernsem.libcal.com/reserve/ubercarrel';
+            };
+            $scope.worshipResource = function() {
+                $scope.iframeSrc = $sce.trustAsResourceUrl('https://api3.libcal.com/widget/equipment?gid=23242&eid=0&iid=5337');
+                $scope.url = 'https://westernsem.libcal.com/space/87475';
+            };
+            $scope.accessibility = function() {
+                $scope.iframeSrc = $sce.trustAsResourceUrl('https://api3.libcal.com/widget/equipment?gid=23240&eid=0&iid=5337');
+                $scope.url = 'https://westernsem.libcal.com/space/87463';
+            };
+            $scope.locker = function() {
+                $scope.iframeSrc = $sce.trustAsResourceUrl('https://api3.libcal.com/widget/equipment?gid=23301&eid=0&iid=5337');
+                $scope.url = 'https://westernsem.libcal.com/spaces?lid=11695&amp;gid=23301';
+            };
+
+            function DialogController($scope, $mdDialog) {
+                $scope.hide = function() {
+                    $mdDialog.hide();
+                };
+
+                $scope.cancel = function() {
+                    $mdDialog.cancel();
+                };
+
+                $scope.answer = function(answer) {
+                    $mdDialog.hide(answer);
+                };
+            }
+
+        }]);
+    /** LibCal Reservations **/
     /********/
     /** Linked Open Data Author Card **/
     // https://github.com/jweisman/primo-explore-lod-author-card
@@ -2154,15 +2180,41 @@
             templateUrl: app.vidPath + '/html/angular/lodAuthorCard.html',
         });
     /** Linked Open Data Author Card **/
-	/** Edit Personal Information Tweaks **/
-	app.component('prmPersonalInfoAfter', {
+	/********/
+    /** Affiliate Links **/
+    app.component('oclcLinkAfter', {
         bindings: {
             parentCtrl: '<'
         },
-		require: {
-			prmPersonalInfo: '^prmPersonalInfoAfter'
-		},
-		templateUrl: app.vidPath + '/html/angular/prmPersonalInfoAfter.html'
-	});
-	/** Edit Personal Information Tweaks **/
+        require: {
+            prmServiceLinks: '^^prmServiceLinks'
+        },
+        templateUrl: app.vidPath + '/html/angular/affiliateLink.html',
+        controller: ['$scope', '$http', function($scope, $http) {
+            if ($scope.$parent.$ctrl.parentCtrl.item.pnx.addata.isbn) {
+                $scope.isbnArray = $scope.$parent.$ctrl.parentCtrl.item.pnx.addata.isbn;
+                $scope.isbn = $scope.isbnArray[$scope.isbnArray.length - 1];
+                $scope.isbn = $scope.isbn.replace(/-/g,'');
+                console.log($scope.isbn);
+            }
+            else
+            {
+                console.log('ISBN undefined');    
+            }
+        }]
+    });
+    /** Affiliate Links **/
+	/********/
+
+    /** Edit Personal Information Tweaks **/
+    app.component('prmPersonalInfoAfter', {
+        bindings: {
+            parentCtrl: '<'
+        },
+        require: {
+            prmPersonalInfo: '^prmPersonalInfoAfter'
+        },
+        templateUrl: app.vidPath + '/html/angular/prmPersonalInfoAfter.html'
+    });
+    /** Edit Personal Information Tweaks **/
 })();

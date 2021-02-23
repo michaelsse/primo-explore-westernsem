@@ -1,6 +1,6 @@
 <unpaywall ng-if="$ctrl.show">
     <div layout="flex" ng-if="$ctrl.best_oa_link" class="layout-row">
-        <a ng-click="$ctrl.trackLinkClick($ctrl.doi)" target="_blank" ng-href="{{$ctrl.best_oa_link}}">
+        <a rel="noopener noreferrer" ng-click="$ctrl.trackLinkClick($ctrl.doi)" target="_blank" ng-href="{{$ctrl.best_oa_link}}">
             <prm-icon translate-attr-title="delivery.code.open_access" icon-type="svg" svg-icon-set="action" icon-definition="ic_lock_open_24px" style="color: #f68212;"></prm-icon>
             <strong translate="delivery.code.open_access"></strong>
             <span translate="delivery.code.unpaywall"></span>

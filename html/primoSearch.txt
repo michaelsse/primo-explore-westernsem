@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <ShortName>Cook Library</ShortName>
+    <Description>Western Theological Seminary / Cook Library Primo Catalog</Description>
+    <InputEncoding>UTF-8</InputEncoding>
+    <OutputEncoding>UTF-8</OutputEncoding>
+    <Query role="example" searchTerms="theology" />
+    <Tags>primo search library</Tags>
+    <Language>en</Language>
+    <Language>es</Language>
+    <AdultContent>false</AdultContent>
+    <Contact>library@westernsem.edu</Contact>
+	<Image height="32" width="32" type="image/png">https://col-westernsem.primo.exlibrisgroup.com/discovery/custom/01COL_WTS-WTS/img/icon/favicon-32x32.png</Image>
+    <Url type="text/html" template="https://col-westernsem.primo.exlibrisgroup.com/discovery/search?tab=Everything&amp;search_scope=MyInst_and_CI&amp;vid=01COL_WTS:WTS&amp;query=any,contains,{searchTerms}"></Url>
+	<Url type="application/opensearchdescription+xml" rel="self" template="https://col-westernsem.primo.exlibrisgroup.com/discovery/custom/01COL_WTS-WTS/html/primoSearch.txt"></Url>
+</OpenSearchDescription>
